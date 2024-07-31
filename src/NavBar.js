@@ -240,27 +240,27 @@ $('.aside').addClass('aside_visible')
      
   
               {/* <li class="navigation__item">
-                <a href="http://localhost:3000/FAQ" class="navigation__link js-nav-right d-flex align-items-center">FAQ<svg class="ms-auto" width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg"><use href="#icon_next_sm" /></svg></a>
+                <a href="http://5.35.94.133:3000/FAQ" class="navigation__link js-nav-right d-flex align-items-center">FAQ<svg class="ms-auto" width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg"><use href="#icon_next_sm" /></svg></a>
              
               </li> */}
 
   <li class="navigation__item">
-                <a href="http://localhost:3000/"  class="navigation__link">Home</a>
+                <a href="http://5.35.94.133:3000/"  class="navigation__link">Home</a>
               </li>
   <li class="navigation__item">
-                <a href="http://localhost:3000/store"  class="navigation__link">store</a>
+                <a href="http://5.35.94.133:3000/store"  class="navigation__link">store</a>
               </li>
               <li class="navigation__item">
-                <a href="http://localhost:3000/About" class="navigation__link">About</a>
+                <a href="http://5.35.94.133:3000/About" class="navigation__link">About</a>
               </li>
               <li class="navigation__item">
-                <a href="http://localhost:3000/FAQ" class="navigation__link">FAQ</a>
+                <a href="http://5.35.94.133:3000/FAQ" class="navigation__link">FAQ</a>
               </li>
               <li class="navigation__item">
-                <a href="http://localhost:3000/FAQ" class="navigation__link">Delivery</a>
+                <a href="http://5.35.94.133:3000/FAQ" class="navigation__link">Delivery</a>
               </li>
               <li class="navigation__item">
-                <a href="http://localhost:3000/FAQ" class="navigation__link">Payment</a>
+                <a href="http://5.35.94.133:3000/FAQ" class="navigation__link">Payment</a>
               </li>
             </ul>
           </div>
@@ -326,7 +326,7 @@ $('.aside').addClass('aside_visible')
     <header id="header" class="header header_sticky header-fullwidth">
       <div class="header-desk header-desk_type_5">
         <div class="logo">
-          <a href="http://localhost:3000/">
+          <a href="http://5.35.94.133:3000/">
             <div class='stroke-text h1 smooth-16 smooth-161 text-uppercase fw-bold mb-3 mb-xl-4 mb-xl-5'>Dildo-Shop</div>
           </a>
         </div>
@@ -354,11 +354,11 @@ $('.aside').addClass('aside_visible')
         <nav class="navigation mx-auto mx-xxl-0">
           <ul class="navigation__list list-unstyled d-flex">
             <li class="navigation__item">
-              <a href="http://localhost:3000" class="navigation__link">Home</a>
+              <a href="http://5.35.94.133:3000" class="navigation__link">Home</a>
        
             </li>
             <li class="navigation__item">
-              <a href="http://localhost:3000/store" class="navigation__link">Shop</a>
+              <a href="http://5.35.94.133:3000/store" class="navigation__link">Shop</a>
               {/* <div class="mega-menu">
                 <div class="container d-flex">
                   <div class="col pe-4">
@@ -427,16 +427,16 @@ $('.aside').addClass('aside_visible')
             </li>
 
             <li class="navigation__item">
-              <a href="http://localhost:3000/About" class="navigation__link">About</a>
+              <a href="http://5.35.94.133:3000/About" class="navigation__link">About</a>
             </li>
             <li class="navigation__item">
-              <a href="http://localhost:3000/FAQ" class="navigation__link">FAQ</a>
+              <a href="http://5.35.94.133:3000/FAQ" class="navigation__link">FAQ</a>
             </li>
             <li class="navigation__item">
-              <a href="http://localhost:3000/FAQ" class="navigation__link">Delivery</a>
+              <a href="http://5.35.94.133:3000/FAQ" class="navigation__link">Delivery</a>
             </li>
             <li class="navigation__item">
-              <a href="http://localhost:3000/FAQ" class="navigation__link">Payment</a>
+              <a href="http://5.35.94.133:3000/FAQ" class="navigation__link">Payment</a>
             </li>
 
           </ul>

@@ -196,8 +196,8 @@ await updateOneBasketItemPlus(is.id).then(
                 <a     class="menu-link menu-link_us-s text-uppercase fw-medium">The Shop</a>
               </div>
               <div class="product-single__prev-next d-flex align-items-center justify-content-between justify-content-md-end flex-grow-1">
-                <a href='http://localhost:3000/' class="text-uppercase fw-medium"><svg class="mb-1px" width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use     /></svg><span class="menu-link menu-link_us-s">HOME</span></a>
-                <a href='http://localhost:3000/cart'  class="text-uppercase fw-medium"><span class="menu-link menu-link_us-s">BASKET</span><svg class="mb-1px" width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use href="#icon_next_md" /></svg></a>
+                <a href='http://5.35.94.133:3000/' class="text-uppercase fw-medium"><svg class="mb-1px" width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use     /></svg><span class="menu-link menu-link_us-s">HOME</span></a>
+                <a href='http://5.35.94.133:3000/cart'  class="text-uppercase fw-medium"><span class="menu-link menu-link_us-s">BASKET</span><svg class="mb-1px" width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use /></svg></a>
               </div>
             </div>
             <h1 class="product-single__name text_al_s" >{setcategoriaRef?.current?.name}</h1>
@@ -315,7 +315,7 @@ setcategoriaRef?.current==null?
               <a     class="menu-link menu-link_us-s add-to-wishlist"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use     /></svg><span>Add to Wishlist</span></a>
               <share-button class="share-button d-flex">
                 <button class="menu-link menu-link_us-s to-share border-0 bg-transparent d-flex align-items-center">
-                  <svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_sharing" /></svg>
+                  <svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg"><use /></svg>
                   <span>Share</span>
                 </button>
                 <details id="Details-share-template__main" class="m-1 xl:m-1.5" hidden="">
@@ -593,7 +593,7 @@ setcategoriaRef?.current==null?
 }</div>
            <div class="pc__img-wrapper">
             
-             <a href={`http://localhost:3000/item/${item.id}`}  >
+             <a href={`http://5.35.94.133:3000/item/${item.id}`}  >
               
                <img loading="lazy" src={item.Item_photo[0]?.photo} width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img"/>
                <img loading="lazy" src={item.Item_photo[0]?.photo} width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second"/>
@@ -684,8 +684,8 @@ setcategoriaRef?.current==null?
     <h6 class="fs-base fw-medium">SUBTOTAL:</h6>
     <span class="cart-subtotal fw-medium">${setsubtotRef?.current}</span>
   </div>
-  <a href="http://localhost:3000/cart" class="btn btn-light mt-3 d-block">View Cart</a>
-  <a href="http://localhost:3000/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
+  <a href="http://5.35.94.133:3000/cart" class="btn btn-light mt-3 d-block">View Cart</a>
+  <a href="http://5.35.94.133:3000/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
 </div>
 </div>
   <div class="mb-5 pb-xl-5"></div>
