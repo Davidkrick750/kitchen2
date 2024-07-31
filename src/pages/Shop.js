@@ -677,8 +677,8 @@ await updateOneBasketItemPlus(is.id).then(
     <h6 class="fs-base fw-medium">SUBTOTAL:</h6>
     <span class="cart-subtotal fw-medium">${setsubtotRef?.current}</span>
   </div>
-  <a href="http://5.35.94.133:3000/cart" class="btn btn-light mt-3 d-block">View Cart</a>
-  <a href="http://5.35.94.133:3000/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
+  <a href="https://it-basepoint.ru/cart" class="btn btn-light mt-3 d-block">View Cart</a>
+  <a href="https://it-basepoint.ru/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
 </div>
 </div>
   <div class="mb-5 pb-xl-5"></div>
