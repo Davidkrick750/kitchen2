@@ -21,20 +21,18 @@ function Footer() {
           <div class="row row-cols-lg-5 row-cols-2">
             <div class="footer-column footer-store-info col-12 mb-4 mb-lg-0">
               <div class="logo">
-                <a href="index.html">
-                  <img src="./images/logo-dark-blue.png" alt="Uomo" class="logo__image d-block"/>
-                </a>
+              <a href="http://localhost:3000/">
+            <div class='stroke-text h1 smooth-16 smooth-161 text-uppercase fw-bold mb-3 mb-xl-4 mb-xl-5'>Wet-Love</div>
+          </a>
               </div>
-              <p class="footer-address">1418 River Drive, Suite 35 Cottonhall, CA 9622 United States</p>
+              <p class="footer-address">Wet-Love is the best friend for your family, make your sex diverse and beautiful
+              </p>
     
               <p class="m-0">
-                <strong class="fw-medium">sale@uomo.com</strong>
+                <strong class="fw-medium">wetlove.support@gmail.com</strong>
               </p>
-              <p>
-                <strong class="fw-medium">+1 246-345-0695</strong>
-              </p>
-    
-              <ul class="social-links list-unstyled d-flex flex-wrap mb-0">
+            
+              {/* <ul class="social-links list-unstyled d-flex flex-wrap mb-0">
                 <li>
                   <a href="https://www.facebook.com" class="footer__social-link d-block">
                     <svg class="svg-icon svg-icon_facebook" width="9" height="15" viewBox="0 0 9 15" xmlns="http://www.w3.org/2000/svg"><use href="#icon_facebook" /></svg>
@@ -60,100 +58,91 @@ function Footer() {
                     <svg class="svg-icon svg-icon_pinterest" width="14" height="15" viewBox="0 0 14 15" xmlns="http://www.w3.org/2000/svg"><use href="#icon_pinterest" /></svg>
                   </a>
                 </li>
-              </ul>
+              </ul> */}
             </div>
     
             <div class="footer-column footer-menu mb-4 mb-lg-0">
               <h6 class="sub-menu__title text-uppercase">Company</h6>
               <ul class="sub-menu__list list-unstyled">
-                <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">About Us</a></li>
-                <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">Careers</a></li>
-                <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">Affiliates</a></li>
-                <li class="sub-menu__item"><a href="blog_list1.html" class="menu-link menu-link_us-s">Blog</a></li>
-                <li class="sub-menu__item"><a href="contact.html" class="menu-link menu-link_us-s">Contact Us</a></li>
+                <li class="sub-menu__item"><a href="http://localhost:3000/About" class="menu-link menu-link_us-s">About Us</a></li>
+                <li class="sub-menu__item"><a href="http://localhost:3000/FAQ" class="menu-link menu-link_us-s">FAQ</a></li>
+                <li class="sub-menu__item"><a href="http://localhost:3000/FAQ" class="menu-link menu-link_us-s">DELIVERY</a></li>
+                <li class="sub-menu__item"><a href="http://localhost:3000/FAQ" class="menu-link menu-link_us-s">PAYENT</a></li>
               </ul>
             </div>
     
             <div class="footer-column footer-menu mb-4 mb-lg-0">
               <h6 class="sub-menu__title text-uppercase">Shop</h6>
               <ul class="sub-menu__list list-unstyled">
-                <li class="sub-menu__item"><a href="shop2.html" class="menu-link menu-link_us-s">New Arrivals</a></li>
-                <li class="sub-menu__item"><a href="shop3.html" class="menu-link menu-link_us-s">Accessories</a></li>
-                <li class="sub-menu__item"><a href="shop4.html" class="menu-link menu-link_us-s">Men</a></li>
-                <li class="sub-menu__item"><a href="shop5.html" class="menu-link menu-link_us-s">Women</a></li>
-                <li class="sub-menu__item"><a    class="menu-link menu-link_us-s">Shop All</a></li>
+                <li class="sub-menu__item"><a href="http://localhost:3000/store/New_Sale" class="menu-link menu-link_us-s">New Sale</a></li>
+                <li class="sub-menu__item"><a href="http://localhost:3000/store/Male_Toys" class="menu-link menu-link_us-s">Male Toys</a></li>
+                <li class="sub-menu__item"><a href="http://localhost:3000/store/Vibrators" class="menu-link menu-link_us-s">Vibrators</a></li>
+                <li class="sub-menu__item"><a href="http://localhost:3000/store/Dildos" class="menu-link menu-link_us-s">Dildos</a></li>
+                <li class="sub-menu__item"><a href="http://localhost:3000/store/Bondage" class="menu-link menu-link_us-s">Bondage</a></li>
+
               </ul>
             </div>
     
             <div class="footer-column footer-menu mb-4 mb-lg-0">
-              <h6 class="sub-menu__title text-uppercase">Help</h6>
+              <h6 class="sub-menu__title text-uppercase">Account</h6>
               <ul class="sub-menu__list list-unstyled">
-                <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">Customer Service</a></li>
-                <li class="sub-menu__item"><a href="account_dashboard.html" class="menu-link menu-link_us-s">My Account</a></li>
-                <li class="sub-menu__item"><a href="store_location.html" class="menu-link menu-link_us-s">Find a Store</a></li>
-                <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">Legal & Privacy</a></li>
-                <li class="sub-menu__item"><a href="contact.html" class="menu-link menu-link_us-s">Contact</a></li>
-                <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">Gift Card</a></li>
+                <li class="sub-menu__item"><a href="http://localhost:3000/cart" class="menu-link menu-link_us-s">Basket</a></li>
+                <li class="sub-menu__item"><a href="http://localhost:3000/order" class="menu-link menu-link_us-s">Orders</a></li>
+                <li class="sub-menu__item"><a href="http://localhost:3000/account" class="menu-link menu-link_us-s">Wishlist</a></li>
+         
+                <li class="sub-menu__item"><a href="http://localhost:3000/FAQ" class="menu-link menu-link_us-s">Shipping & Payment</a></li>
+                <li class="sub-menu__item"><a href="http://localhost:3000/FAQ" class="menu-link menu-link_us-s">Privacy Policy</a></li>
+                <li class="sub-menu__item"><a href="http://localhost:3000/FAQ" class="menu-link menu-link_us-s">Return Policy</a></li>
+                <li class="sub-menu__item"><a href="http://localhost:3000/FAQ" class="menu-link menu-link_us-s">Edit Terms & Conditions</a></li>
+
+
+
               </ul>
             </div>
     
             <div class="footer-column mb-4 mb-lg-0">
               <h6 class="sub-menu__title text-uppercase">Opening Time</h6>
               <ul class="list-unstyled">
-                <li><span class="menu-link">Mon - Fri: 8AM - 9PM</span></li>
-                <li><span class="menu-link">Sat: 9AM - 8PM</span></li>
-                <li><span class="menu-link">Sun: Closed</span></li>
+                <li><span class="menu-link">Mon - Sun: 7AM - 10PM</span></li>
+               
               </ul>
             </div>
+            <div class="mt-4 pt-3">
+            <strong class="fw-medium">Secure payments</strong>
+            <p class="mt-2">
+              <img loading="lazy" src="../images/payment-options.png" alt="Acceptable payment gateways"/>
+            </p>
+          </div>
           </div>
         </div>
     
-        <div class="footer-bottom">
-          <div class="container d-md-flex align-items-center">
-            <span class="footer-copyright me-auto">©2023 Uomo</span>
-            <div class="footer-settings d-md-flex align-items-center">
-              <select id="footerSettingsLanguage" class="form-select form-select-sm bg-transparent border-0" aria-label="Default select example" name="store-language">
-                <option class="footer-select__option" selected>United Kingdom | English</option>
-                <option class="footer-select__option" value="1">United States | English</option>
-                <option class="footer-select__option" value="2">German</option>
-                <option class="footer-select__option" value="3">French</option>
-                <option class="footer-select__option" value="4">Swedish</option>
-              </select>
-    
-              <select id="footerSettingsCurrency" class="form-select form-select-sm bg-transparent border-0" aria-label="Default select example" name="store-language">
-                <option class="footer-select__option" selected>$ USD</option>
-                <option class="footer-select__option" value="1">£ GBP</option>
-                <option class="footer-select__option" value="2">€ EURO</option>
-              </select>
-            </div>
-          </div>
-        </div>
+
       </footer>
     
       <footer class="footer-mobile container w-100 px-5 d-md-none bg-body">
         <div class="row text-center">
           <div class="col-4">
-            <a href="../index.html" class="footer-mobile__link d-flex flex-column align-items-center">
+            <a href="http://localhost:3000" class="footer-mobile__link d-flex flex-column align-items-center">
               <svg class="d-block" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_home" /></svg>
               <span>Home</span>
             </a>
           </div> 
     
           <div class="col-4">
-            <a href="../index.html" class="footer-mobile__link d-flex flex-column align-items-center">
+            <a href="http://localhost:3000/store/New_Sale" class="footer-mobile__link d-flex flex-column align-items-center">
               <svg class="d-block" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_hanger" /></svg>
               <span>Shop</span>
             </a>
           </div> 
     
           <div class="col-4">
-            <a href="../index.html" class="footer-mobile__link d-flex flex-column align-items-center">
-              <div class="position-relative">
-                <svg class="d-block" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use     /></svg>
-                <span class="wishlist-amount d-block position-absolute js-wishlist-count">3</span>
-              </div>
-              <span>Wishlist</span>
-            </a>
+          <a href="http://localhost:3000/account" class="footer-mobile__link d-flex flex-column align-items-center">
+          <div class="position-relative">
+            <svg class="d-block" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart"></use></svg>
+            {/* <span class="wishlist-amount d-block position-absolute js-wishlist-count">3</span> */}
+          </div>
+          <span>Wishlist</span>
+        </a>
           </div> 
         </div>  
       </footer>
@@ -193,7 +182,7 @@ function Footer() {
                   <div class="row">
                     <ul class="nav nav-tabs list-unstyled col-5 d-block" id="myTab" role="tablist">
                       <li class="nav-item position-relative" role="presentation">
-                        <a class="nav-link nav-link_rline active" id="tab-item-1-tab" data-bs-toggle="tab" href="index.html#tab-item-1" role="tab" aria-controls="tab-item-1" aria-selected="true"><span class="rline-content">WOMEN</span></a>
+                        <a class="nav-link nav-link_rline active" id="tab-item-1-tab" data-bs-toggle="tab" href="http://localhost:3000/" role="tab" aria-controls="tab-item-1" aria-selected="true"><span class="rline-content">WOMEN</span></a>
                       </li>
                       <li class="nav-item position-relative" role="presentation">
                         <a class="nav-link nav-link_rline" id="tab-item-2-tab" data-bs-toggle="tab" href="index.html#tab-item-2" role="tab" aria-controls="tab-item-2" aria-selected="false"><span class="rline-content">MAN</span></a>

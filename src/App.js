@@ -7,6 +7,7 @@ import './pages/css/style.css'
 import Footer from './Footer.js'
 import NavBar from './NavBar.js'
 import ScrollToTop from './ScrollTop.js';
+import Nav from './Nav.js';
 
 const App = observer(() => {
 
@@ -18,7 +19,7 @@ const App = observer(() => {
 
 
           <BrowserRouter >
-          <NavBar/>
+          <Nav/>
           <ScrollToTop/>
           <AppRouter /> 
     <Footer/>

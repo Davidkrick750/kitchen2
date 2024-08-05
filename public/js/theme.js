@@ -383,6 +383,8 @@ function pureFadeOut(e) {
 
     return Aside;
   })();
+  $(document).ready(function() {
+
   UomoSections.SwiperSlideshow = (function () {
     function SwiperSlideshow () {
       this.selectors = {
@@ -441,6 +443,8 @@ function pureFadeOut(e) {
 
     return SwiperSlideshow;
   })();
+
+})
   UomoElements.Countdown = (function () {
     function Countdown (container) {
       this.selectors = {
@@ -951,6 +955,7 @@ function pureFadeOut(e) {
 
     return CartDrawer;
   })();
+  $(document).ready(function() {
 
   UomoSections.SwiperSlideshow = (function () {
     function SwiperSlideshow () {
@@ -1010,7 +1015,7 @@ function pureFadeOut(e) {
 
     return SwiperSlideshow;
   })();
-
+  })
   UomoSections.ProductSingleMedia = (function () {
     function ProductSingleMedia () {
       this.selectors = {
@@ -1359,7 +1364,6 @@ function pureFadeOut(e) {
     // Init theme
     UomoHelpers.isMobile = UomoHelpers.updateDeviceSize();
     new Uomo();
-  });
 
   $('a[data-bs-toggle="tab"]').on('shown.bs.tab', function(e) {
     var paneTarget = $(e.target).attr('href');
@@ -1382,6 +1386,7 @@ function pureFadeOut(e) {
       });
      }
   });
+});
 
   var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
   var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {

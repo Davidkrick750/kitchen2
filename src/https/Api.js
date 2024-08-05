@@ -68,6 +68,30 @@ export const deleteBasketItem = async (id) => {
 }
 
 
+export const createLove = async (UserId,ItemId) => {
+    const {data} = await $host.post(`api/user/createLove`,{UserId,ItemId})
+    return data
+}
+export const getLove = async (UserId) => {
+    const {data} = await $host.post(`api/user/getLove`,{UserId})
+    return data
+}
+export const deleteLove = async (id) => {
+    const {data} = await $host.post(`api/user/deleteLove`,{id})
+    return data
+}
 
+export const gellove_ = async (UserId,ItemId) => {
+    const {data} = await $host.post(`api/user/gellove_`,{UserId,ItemId})
+    return data
+}
 
+export const createOrder = async (UserId,adres,price1,Name,Familia,Phone,Mail) => {
+    const {data} = await $host.post(`api/user/createOrder`,{UserId,adres,price1,Name,Familia,Phone,Mail})
+    return data
+}
 
+export const getOrder = async (UserId) => {
+    const {data} = await $host.post(`api/user/getOrder`,{UserId})
+    return data
+}

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import useState from 'react-usestateref'
-import { check, createbasketitem, deleteBasketItem, getBasketItemAll, getCategoriaAll, getItemOne, get_any_Item, updateOneBasketItemMinus, updateOneBasketItemPlus } from '../https/Api';
+import { auth0, check, createbasketitem, deleteBasketItem, getBasketItemAll, getCategoriaAll, getItemOne, get_any_Item, updateOneBasketItemMinus, updateOneBasketItemPlus } from '../https/Api';
 import $ from 'jquery'
 import { useNavigate, useParams } from 'react-router-dom';
 import './css/style.css'
@@ -9,6 +9,8 @@ import { jwtDecode } from "jwt-decode";
 // import styles bundle
 import 'swiper/css/bundle';
 import './css/App.css'
+import NavBar from '../NavBar';
+
 import { GLAV_ROUTE, SHOPITEM_ROUTE, SHOPShop_cart_ROUTE } from '../utils/consts';
 function Shop_item() {
   const navigate = useNavigate()
@@ -17,6 +19,9 @@ function Shop_item() {
   const [categoria2,setcategoria2,setcategoria2Ref] = useState(null)
   const [categoria3,setcategoria3,setcategoria3Ref] = useState(null)
 
+  const [mater,setmater,setmaterRef] = useState()
+
+  const [skoka,setskoka,setskokaRef] = useState(0)
 
     const [categoria,setcategoria,setcategoriaRef] = useState(null)
     const [onecategoria,setonecategoria,setonecategoriaRef] = useState(null)
@@ -26,6 +31,7 @@ function Shop_item() {
     const [userId,setuserId,setuserIdRef] = useState()
     const [basketItem,setbasketItem,setbasketItemRef] = useState(null)
     const {id} = useParams()
+    console.log(id)
     useEffect(()=>{
 
       if(setcategoria1Ref.current==null){
@@ -51,36 +57,52 @@ function Shop_item() {
       const getBasketItem = async() => {
    
         const storedToken = localStorage.getItem('token');
-        const userId = jwtDecode(storedToken)
-        console.log(userId.id)
-        const basketitem = await getBasketItemAll(userId.id)
-        let subt = 0
-        const subtotal = basketitem.map(item=> subt = subt + (item.price*item.qauantity))
-        setsubtot(subt)
-        setbasketItem(basketitem)
-        console.log(basketitem)
+        if(storedToken==null || storedToken==undefined){
+          await auth0()
+          getBasketItem()
+        }else{
+          const userId = jwtDecode(storedToken)
+          console.log(userId.id)
+          const basketitem = await getBasketItemAll(userId.id)
+          let subt = 0
+          const subtotal = basketitem.map(item=> subt = subt + (item.price*item.qauantity*((100-item.skidka)/100)))
+          let skok = 0
+          const skok1 = basketitem.map(item=> skok = Number(skok) + Number(item.qauantity))
+          setskoka(skok)
+  
+          setsubtot(subt)
+          setbasketItem(basketitem)
+          console.log(basketitem)
+        }
+
       }
     const check1 = async(id2) => {
       const storedToken = localStorage.getItem('token');
-      const userId = jwtDecode(storedToken)
-      setuserId(userId.id)
-      console.log(userId.id)
-      console.log(id2)
-      const info = await check(userId.id,id2)
-      if(info==null){
-       await createbasketitem(userId.id,id2).then(
-        setTimeout(() => {
-          getBasketItem()
-        }, 150)
-       )
-       
+      if(storedToken==null || storedToken==undefined){
+        await auth0()
+        check1()
       }else{
-        await updateOneBasketItemPlus(info.id).then(
+        const userId = jwtDecode(storedToken)
+        setuserId(userId.id)
+        console.log(userId.id)
+        console.log(id2)
+        const info = await check(userId.id,id2)
+        if(info==null){
+         await createbasketitem(userId.id,id2).then(
           setTimeout(() => {
             getBasketItem()
           }, 150)
-        )
+         )
+         
+        }else{
+          await updateOneBasketItemPlus(info.id).then(
+            setTimeout(() => {
+              getBasketItem()
+            }, 150)
+          )
+        }
       }
+     
   }
     const plus = async(is) => {
 await updateOneBasketItemPlus(is.id).then(
@@ -121,7 +143,14 @@ await updateOneBasketItemPlus(is.id).then(
         const get_Categoria = async() => {
           const categoria = await getItemOne(id)
           setcategoria(categoria)
-  
+          console.log(categoria)
+          const x  = categoria.dop_info
+          const povtor = x.slice(0,10)
+          const xx = x.indexOf(povtor,1)
+          const nat = x.slice(1,xx)
+          setmater(nat)
+          console.log(nat)
+   
    }
       const delete1 = async(is) => {
         await deleteBasketItem(is).then(
@@ -136,12 +165,13 @@ await updateOneBasketItemPlus(is.id).then(
   return (
     <div className="App">
 
+<NavBar skoka={setskokaRef?.current}/>
 
   
   <main class='pdat center'>
     <section class="product-single product-single__type-6 container">
       <div class="row">
-        <div class="col-lg-7">
+        <div class="col-lg-7 d_flq">
           <div class="mb-md-1 pb-md-3"></div>
           <div class="product-single__media" data-media-type="list-image">
           <div class="product-single__image d-flex flex-row gap-2 w100b paddi bobo">
@@ -191,13 +221,13 @@ await updateOneBasketItemPlus(is.id).then(
             <div class="mb-md-1 pb-md-3"></div>
             <div class="d-flex justify-content-between mb-4 pb-md-2">
               <div class=" text_al_s breadcrumb mb-0 d-none d-md-block flex-grow-1">
-                <a     class="menu-link menu-link_us-s text-uppercase fw-medium">Home</a>
+                <a   href='http://localhost:3000'  class="menu-link menu-link_us-s text-uppercase fw-medium">Home</a>
                 <span class="breadcrumb-separator menu-link fw-medium ps-1 pe-1">/</span>
-                <a     class="menu-link menu-link_us-s text-uppercase fw-medium">The Shop</a>
+                <a  href='http://localhost:3000/store/New_Sale'    class="menu-link menu-link_us-s text-uppercase fw-medium">The Shop</a>
               </div>
               <div class="product-single__prev-next d-flex align-items-center justify-content-between justify-content-md-end flex-grow-1">
-                <a href='https://it-basepoint.ru/' class="text-uppercase fw-medium"><svg class="mb-1px" width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use     /></svg><span class="menu-link menu-link_us-s">HOME</span></a>
-                <a href='https://it-basepoint.ru/cart'  class="text-uppercase fw-medium"><span class="menu-link menu-link_us-s">BASKET</span><svg class="mb-1px" width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use /></svg></a>
+                <a href='http://localhost:3000/' class="text-uppercase fw-medium"><svg class="mb-1px" width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use     /></svg><span class="menu-link menu-link_us-s">HOME</span></a>
+                <a href='http://localhost:3000/cart'  class="text-uppercase fw-medium"><span class="menu-link menu-link_us-s">BASKET</span><svg class="mb-1px" width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use /></svg></a>
               </div>
             </div>
             <h1 class="product-single__name text_al_s" >{setcategoriaRef?.current?.name}</h1>
@@ -248,9 +278,9 @@ setcategoriaRef?.current==null?
               <span class="current-price">${setcategoriaRef?.current?.price}</span>
               :
               <div class="product-single__price">
-                
-              <span class="old-price">${(setcategoriaRef?.current?.price/((100-setcategoriaRef?.current?.skidka)/100)).toFixed(0)}</span>
-              <span class="special-price">${setcategoriaRef?.current?.price}</span>
+              
+              <span class="old-price">${setcategoriaRef?.current?.price}</span>
+              <span class="special-price">${(setcategoriaRef?.current?.price*((100-setcategoriaRef?.current?.skidka)/100)).toFixed(2)}</span>
             </div>
               }
             
@@ -311,32 +341,7 @@ setcategoriaRef?.current==null?
                 <button type="submit" class="btn btn-primary btn-addtocart js-open-aside" onClick={()=>check1(id)} data-aside="cartDrawer">Add to Cart</button>
               </div>
             </form>
-            <div class="product-single__addtolinks">
-              <a     class="menu-link menu-link_us-s add-to-wishlist"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use     /></svg><span>Add to Wishlist</span></a>
-              <share-button class="share-button d-flex">
-                <button class="menu-link menu-link_us-s to-share border-0 bg-transparent d-flex align-items-center">
-                  <svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg"><use /></svg>
-                  <span>Share</span>
-                </button>
-                <details id="Details-share-template__main" class="m-1 xl:m-1.5" hidden="">
-                  <summary class="btn-solid m-1 xl:m-1.5 pt-3.5 pb-3 px-5">+</summary>
-                  <div id="Article-share-template__main" class="share-button__fallback flex items-center absolute top-full left-0 w-full px-2 py-4 bg-container shadow-theme border-t z-10">
-                    <div class="field grow mr-4">
-                      <label class="field__label sr-only" for="url">Link</label>
-                      <input type="text" class="field__input w-full" id="url" value="https://uomo-crystal.myshopify.com/blogs/news/go-to-wellness-tips-for-mental-health" placeholder="Link" onclick="this.select();" readonly=""/>
-                    </div>
-                    <button class="share-button__copy no-js-hidden">
-                      <svg class="icon icon-clipboard inline-block mr-1" width="11" height="13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 11 13">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 1a1 1 0 011-1h7a1 1 0 011 1v9a1 1 0 01-1 1V1H2zM1 2a1 1 0 00-1 1v9a1 1 0 001 1h7a1 1 0 001-1V3a1 1 0 00-1-1H1zm0 10V3h7v9H1z" fill="currentColor"></path>
-                      </svg>
-                      <span class="sr-only">Copy link</span>
-                    </button>
-                  </div>
-                </details>
-              </share-button>
-              <script src="js/details-disclosure.js" defer="defer"></script>
-              <script src="js/share.js" defer="defer"></script>
-            </div>
+        
             {/* <div class="product-single__meta-info text_al_s">
               <div class="meta-item">
                 <label>SKU:</label>
@@ -363,7 +368,7 @@ setcategoriaRef?.current==null?
                   <div class="accordion-body">
                     <div class="product-single__description">
                       <h3 class="block-title mb-4">{setcategoriaRef?.current?.description_title}</h3>
-                      <p class="content">{setcategoriaRef?.current?.description_value}</p>
+                      <h4 class="content">{setcategoriaRef?.current?.description_value}</h4>
                       {/* <div class="row">
                         <div class="col-lg-6">
                           <h3 class="block-title">Why choose product?</h3>
@@ -382,11 +387,11 @@ setcategoriaRef?.current==null?
                           </ol>
                         </div>
                       </div> */}
-                      <h3 class="block-title mb-0">Our company
+                      {/* <h3 class="block-title mb-0">Our company
 </h3>
                       <p class="content">We give care to you and your loved ones
 
- </p>
+ </p> */}
                     </div>
                   </div>
                 </div>
@@ -403,7 +408,7 @@ setcategoriaRef?.current==null?
                 <div class="accordion-body">
                     <div class="product-single__description">
                       <h3 class="block-title mb-4">{setcategoriaRef?.current?.description_title}</h3>
-                      <p class="content">{setcategoriaRef?.current?.dop_info}</p>
+                      <p class="content">{setmaterRef?.current}</p>
                       {/* <div class="row">
                         <div class="col-lg-6">
                           <h3 class="block-title">Why choose product?</h3>
@@ -422,9 +427,9 @@ setcategoriaRef?.current==null?
                           </ol>
                         </div>
                       </div> */}
-                      <h3 class="block-title mb-0">Our company
+                      <h3 class="block-title mb-0">Info
 </h3>
-                      <p class="content">We give care to you and your loved ones
+                      <p class="content">Our products are made of high-quality and hypoallergenic materials. We care about the quality of the products and your pleasure, so each product goes through 13 stages of control until its packaging
 
  </p>
                     </div>
@@ -435,7 +440,7 @@ setcategoriaRef?.current==null?
               <div class="accordion-item">
                 <h5 class="accordion-header" id="accordion-heading-3">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-3" aria-expanded="false" aria-controls="accordion-collapse-3">
- Delivery
+                  Delivery And Packaging + Bonus
                      <svg class="accordion-button__icon" viewBox="0 0 14 14"><g aria-hidden="true" stroke="none" fill-rule="evenodd"><path class="svg-path-vertical" d="M14,6 L14,8 L0,8 L0,6 L14,6"></path><path class="svg-path-horizontal" d="M14,6 L14,8 L0,8 L0,6 L14,6"></path></g></svg>
                   </button>
                 </h5>
@@ -536,8 +541,16 @@ setcategoriaRef?.current==null?
                   </div> */}
                                     <div class="accordion-body">
                     <div class="product-single__description">
-                      <h3 class="block-title mb-4">{setcategoriaRef?.current?.description_title}</h3>
-                      <p class="content">{setcategoriaRef?.current?.description_value}</p>
+                      <h3 class="block-title mb-4">Delivery</h3>
+           
+
+                      <p class="content">Delivery - We deliver to all European countries by international DPD/COLISSIMO services, depending on your location, within 14 days. Additionally, we pack the goods in a black masking thick film, so do not worry about the confidentiality of your parcel
+
+</p>
+<h3 class="block-title mb-4">Bonus</h3>
+<p>+ Bonus : When you purchase an item worth over $100, we give you a hypoallergenic lubricant that is as similar as possible to natural</p>
+             
+
                       {/* <div class="row">
                         <div class="col-lg-6">
                           <h3 class="block-title">Why choose product?</h3>
@@ -556,11 +569,7 @@ setcategoriaRef?.current==null?
                           </ol>
                         </div>
                       </div> */}
-                      <h3 class="block-title mb-0">Our company
-</h3>
-                      <p class="content">We give care to you and your loved ones
-
- </p>
+         
                     </div>
                   </div>
                 </div>
@@ -593,7 +602,7 @@ setcategoriaRef?.current==null?
 }</div>
            <div class="pc__img-wrapper">
             
-             <a href={`https://it-basepoint.ru/item/${item.id}`}  >
+             <a href={`http://localhost:3000/item/${item.id}`}  >
               
                <img loading="lazy" src={item.Item_photo[0]?.photo} width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img"/>
                <img loading="lazy" src={item.Item_photo[0]?.photo} width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second"/>
@@ -664,7 +673,7 @@ setcategoriaRef?.current==null?
           <div onClick={()=>minus(item)} class="qty-control__reduce text-start">-</div>
           <div onClick={()=>plus(item)} class="qty-control__increase text-end">+</div>
         </div>
-        <span class="cart-drawer-item__price money price">${item.price*item.qauantity}</span>
+        <span class="money price price-old">${item.price*item.qauantity}</span><span class="cart-drawer-item__price money price">${ (item.price*item.qauantity*((100-item.skidka)/100)).toFixed(2)}</span>
       </div>
     </div>
 
@@ -682,10 +691,10 @@ setcategoriaRef?.current==null?
   <hr class="cart-drawer-divider"/>
   <div class="d-flex justify-content-between">
     <h6 class="fs-base fw-medium">SUBTOTAL:</h6>
-    <span class="cart-subtotal fw-medium">${setsubtotRef?.current}</span>
+    <span class="cart-subtotal fw-medium">${(setsubtotRef?.current*1).toFixed(2)}</span>
   </div>
-  <a href="https://it-basepoint.ru/cart" class="btn btn-light mt-3 d-block">View Cart</a>
-  <a href="https://it-basepoint.ru/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
+  <a href="http://localhost:3000/cart" class="btn btn-light mt-3 d-block">View Cart</a>
+  <a href="http://localhost:3000/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
 </div>
 </div>
   <div class="mb-5 pb-xl-5"></div>

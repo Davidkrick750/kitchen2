@@ -1,6 +1,63 @@
 
 
+import $ from 'jquery'
+import { useEffect } from "react";
+import { jwtDecode } from 'jwt-decode';
+import useState from 'react-usestateref'
+import { auth0, deleteLove, getBasketItemAll, getLove, getOrder } from '../https/Api';
+import NavBar from '../NavBar';
+
 function Order_Complete() {
+    const [userId,setuserId,setuserIdRef] = useState(null)
+    const [love,setlove,setloveRef] = useState(null)
+
+    useEffect(()=>{
+
+if(setloveRef.current==null){
+    gel()
+}
+if(setskokaRef?.current==null){
+  getBasketItem()
+}
+    })
+    const getBasketItem = async() => {
+   
+      const storedToken = localStorage.getItem('token');
+      if(storedToken==null || storedToken==undefined){
+        await auth0()
+        gel()
+      }else{
+        const userId = jwtDecode(storedToken)
+        const basketitem = await getBasketItemAll(userId.id)
+        let skok = 0
+        const skok1 = basketitem.map(item=> skok = Number(skok) + Number(item.qauantity))
+        setskoka(skok)
+      }
+  
+    }
+    const [skoka,setskoka,setskokaRef] = useState(null)
+
+
+    const gel = async() => {
+
+        const storedToken = localStorage.getItem('token');
+        if(storedToken==null || storedToken==undefined){
+          await auth0()
+          getBasketItem()
+        }else{
+          const userId = jwtDecode(storedToken)
+          setuserId(userId.id)
+          const lov=  await getOrder(userId.id)
+          setlove(lov[lov.length-1])
+          console.log(lov.length)
+          console.log(lov)
+
+        }
+   
+        }
+
+
+
   return (
     <div className="App">
 
@@ -10,21 +67,21 @@ function Order_Complete() {
     <section class="shop-checkout container">
       <h2 class="page-title">Order Received</h2>
       <div class="checkout-steps">
-        <a  class="checkout-steps__item active">
+        <a href='http://localhost:3000/cart'cursor='pointer' class="checkout-steps__item active">
           <span class="checkout-steps__item-number">01</span>
           <span class="checkout-steps__item-title">
             <span>Shopping Bag</span>
             <em>Manage Your Items List</em>
           </span>
         </a>
-        <a  class="checkout-steps__item active">
+        <a href='http://localhost:3000/cart'cursor='pointer' class="checkout-steps__item active">
           <span class="checkout-steps__item-number">02</span>
           <span class="checkout-steps__item-title">
             <span>Shipping and Checkout</span>
             <em>Checkout Your Items List</em>
           </span>
         </a>
-        <a  class="checkout-steps__item active">
+        <a href='http://localhost:3000/cart' cursor='pointer' class="checkout-steps__item active">
           <span class="checkout-steps__item-number">03</span>
           <span class="checkout-steps__item-title">
             <span>Confirmation</span>
@@ -44,20 +101,14 @@ function Order_Complete() {
         <div class="order-info">
           <div class="order-info__item">
             <label>Order Number</label>
-            <span>13119</span>
+            <span>#245{setloveRef?.current?.id}</span>
           </div>
-          <div class="order-info__item">
-            <label>Date</label>
-            <span>27/10/2023</span>
-          </div>
+        
           <div class="order-info__item">
             <label>Total</label>
-            <span>$81.40</span>
+            <span>${setloveRef?.current?.price}</span>
           </div>
-          <div class="order-info__item">
-            <label>Paymetn Method</label>
-            <span>Direct Bank Transfer</span>
-          </div>
+
         </div>
         <div class="checkout__totals-wrapper">
           <div class="checkout__totals">
@@ -66,45 +117,33 @@ function Order_Complete() {
               <thead>
                 <tr>
                   <th>PRODUCT</th>
-                  <th>SUBTOTAL</th>
                 </tr>
               </thead>
-              <tbody>
+              {setloveRef?.current?.Order_Item?.map(
+                item=>
+                  <tbody>
                 <tr>
                   <td>
-                    Zessi Dresses x 2
+                    {item.name} x {item.qauantity}
                   </td>
-                  <td>
-                    $32.50
-                  </td>
+
                 </tr>
-                <tr>
-                  <td>
-                    Kirby T-Shirt
-                  </td>
-                  <td>
-                    $29.90
-                  </td>
-                </tr>
+
               </tbody>
+              )}
+
             </table>
             <table class="checkout-totals">
               <tbody>
-                <tr>
-                  <th>SUBTOTAL</th>
-                  <td>$62.40</td>
-                </tr>
+
                 <tr>
                   <th>SHIPPING</th>
                   <td>Free shipping</td>
                 </tr>
-                <tr>
-                  <th>VAT</th>
-                  <td>$19</td>
-                </tr>
+
                 <tr>
                   <th>TOTAL</th>
-                  <td>$81.40</td>
+                  <td>${setloveRef?.current?.price}</td>
                 </tr>
               </tbody>
             </table>

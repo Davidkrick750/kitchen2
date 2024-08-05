@@ -1,42 +1,81 @@
+import { useEffect } from "react";
+import { jwtDecode } from 'jwt-decode';
+import useState from 'react-usestateref'
+import photo8 from './images/11.jpeg';
+import photo7 from './images/12.jpeg';
+import NavBar from '../NavBar';
+import { auth0, getBasketItemAll } from "../https/Api";
 
 
 function FAQ() {
+
+  const [skoka,setskoka,setskokaRef] = useState(null)
+  const getBasketItem = async() => {
+   
+    const storedToken = localStorage.getItem('token');
+   
+    if(storedToken==null || storedToken==undefined){
+      await auth0()
+      getBasketItem()
+    }else{
+      const userId = jwtDecode(storedToken)
+      console.log(userId.id)
+      const basketitem = await getBasketItemAll(userId.id)
+  
+      let skok = 0
+      const skok1 = basketitem.map(item=> skok = Number(skok) + Number(item.qauantity))
+      setskoka(skok)
+    }
+
+    }
+
+  
+  useEffect(()=>{
+    if(setskokaRef?.current==null){
+      getBasketItem()
+    }
+  })
   return (
     <div className="App">
+<NavBar skoka={setskokaRef?.current}/>
 
 
 <main>
     <div class="mb-4 pb-4"></div>
     <section class="about-us container">
       <div class="mw-930">
-        <h2 class="page-title">ABOUT UOMO</h2>
+        <h2 class="page-title">ABOUT Wet-Love</h2>
       </div>
       <div class="about-us__content pb-5 mb-5">
         <p class="mb-5">
-          <img loading="lazy" class="w-100 h-auto d-block" src="../images/about/about-1.jpg" width="1410" height="550" alt=""/>
+          <img loading="lazy" class="w-100 h-auto d-block" src={photo8} width="1410" height="550" alt=""/>
         </p>
         <div class="mw-930">
           <h3 class="mb-4">OUR STORY</h3>
-          <p class="fs-6 fw-medium mb-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p class="mb-4">Saw wherein fruitful good days image them, midst, waters upon, saw. Seas lights seasons. Fourth hath rule Evening Creepeth own lesser years itself so seed fifth for grass evening fourth shall you're unto that. Had. Female replenish for yielding so saw all one to yielding grass you'll air sea it, open waters subdue, hath. Brought second Made. Be. Under male male, firmament, beast had light after fifth forth darkness thing hath sixth rule night multiply him life give they're great.</p>
+          <p class="fs-6 fw-medium mb-4">We have been developing and producing wonderful sex toys that have been bringing people to a state of euphoria for 10 years. Once upon a time, on the outskirts of Hungary, a small sex toy store was very much liked by the locals and then we decided to expand, realizing the importance of our mission - to bring love into this world, strengthening your families.
+          </p>
+          <p class="mb-4">We love you and your partners, so we do our job efficiently, taking into account your taste preferences. Thank you for staying with us)
+          </p>
           <div class="row mb-3">
             <div class="col-md-6">
               <h5 class="mb-3">Our Mission</h5>
-              <p class="mb-3">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p class="mb-3">Our mission is to please as many people as possible
+              </p>
             </div>
             <div class="col-md-6">
               <h5 class="mb-3">Our Vision</h5>
-              <p class="mb-3">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p class="mb-3">We see the world of sex toys as a whole world for creativity and your pleasure
+              </p>
             </div>
           </div>
         </div>
         <div class="mw-930 d-lg-flex align-items-lg-center">
           <div class="image-wrapper col-lg-6">
-            <img class="h-auto" loading="lazy" src="../images/about/about-2.jpg" width="450" height="500" alt=""/>
+            <img class="h-auto" loading="lazy" src={photo7} width="450" height="500" alt=""/>
           </div>
           <div class="content-wrapper col-lg-6 px-lg-4">
-            <h5 class="mb-3">The Company</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet sapien dignissim a elementum. Sociis metus, hendrerit mauris id in. Quis sit sit ultrices tincidunt euismod luctus diam. Turpis sodales orci etiam phasellus lacus id leo. Amet turpis nunc, nulla massa est viverra interdum. Praesent auctor nulla morbi non posuere mattis. Arcu eu id maecenas cras.</p>
+            <h5 class="mb-3">The Toys</h5>
+            <p>Article 1301. Liability for violation of the exclusive right to the work. In cases of violation of the exclusive right to a work, the author or other rightholder, along with the use of other applicable methods of protection and liability measures established by the Civil Code of the Russian Federation (Articles 1250, 1252 and 1253), has the right, in accordance with paragraph 3 of Article 1252 of the Civil Code of the Russian Federation, to demand, at his choice, compensation from the violator instead of damages in the amount of ten thousand rubles to five million rubles.            .</p>
           </div>
         </div>
       </div>
@@ -46,15 +85,15 @@ function FAQ() {
       <div class="row">
         <div class="col-md-4 text-center mb-5 mb-md-0">
           <div class="service-promotion__icon mb-4">
-            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_shipping" /></svg>
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><use /></svg>
           </div>
-          <h3 class="service-promotion__title fs-6 text-uppercase">Fast And Free Delivery</h3>
-          <p class="service-promotion__content text-secondary">Free delivery for all orders over $140</p>
+          <h3 class="service-promotion__title fs-6 text-uppercase">Fast And Free Delivery (2-14 days)</h3>
+          <p class="service-promotion__content text-secondary">Free delivery </p>
         </div>
 
         <div class="col-md-4 text-center mb-5 mb-md-0">
           <div class="service-promotion__icon mb-4">
-            <svg width="53" height="52" viewBox="0 0 53 52" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_headphone" /></svg>
+            <svg width="53" height="52" viewBox="0 0 53 52" fill="none" xmlns="http://www.w3.org/2000/svg"><use /></svg>
           </div>
           <h3 class="service-promotion__title fs-6 text-uppercase">24/7 Customer Support</h3>
           <p class="service-promotion__content text-secondary">Friendly 24/7 customer support</p>
@@ -62,78 +101,15 @@ function FAQ() {
 
         <div class="col-md-4 text-center mb-4 pb-1 mb-md-0">
           <div class="service-promotion__icon mb-4">
-            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_shield" /></svg>
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><use /></svg>
           </div>
           <h3 class="service-promotion__title fs-6 text-uppercase">Money Back Guarantee</h3>
-          <p class="service-promotion__content text-secondary">We return money within 30 days</p>
+          <p class="service-promotion__content text-secondary">We return money within 60 days</p>
         </div>
       </div>
     </section>
 
-    <section class="brands-carousel container mw-930">
-      <h5 class="mb-3 mb-xl-5">Company Partners</h5>
-      <div class="position-relative">
-        <div class="swiper-container js-swiper-slider"
-          data-settings='{
-            "autoplay": {
-              "delay": 5000
-            },
-            "slidesPerView": 5,
-            "slidesPerGroup": 1,
-            "effect": "none",
-            "loop": true,
-            "breakpoints": {
-              "320": {
-                "slidesPerView": 2,
-                "slidesPerGroup": 2,
-                "spaceBetween": 14
-              },
-              "768": {
-                "slidesPerView": 3,
-                "slidesPerGroup": 3,
-                "spaceBetween": 24
-              },
-              "992": {
-                "slidesPerView": 4,
-                "slidesPerGroup": 1,
-                "spaceBetween": 30,
-                "pagination": false
-              },
-              "1200": {
-                "slidesPerView": 5,
-                "slidesPerGroup": 1,
-                "spaceBetween": 30,
-                "pagination": false
-              }
-            }
-          }'>
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img loading="lazy" src="../images/brands/brand1.png" width="120" height="20" alt=""/>
-            </div>
-            <div class="swiper-slide">
-              <img loading="lazy" src="../images/brands/brand2.png" width="87" height="20" alt=""/>
-            </div>
-            <div class="swiper-slide">
-              <img loading="lazy" src="../images/brands/brand3.png" width="132" height="22" alt=""/>
-            </div>
-            <div class="swiper-slide">
-              <img loading="lazy" src="../images/brands/brand4.png" width="72" height="21" alt=""/>
-            </div>
-            <div class="swiper-slide">
-              <img loading="lazy" src="../images/brands/brand5.png" width="123" height="31" alt=""/>
-            </div>
-            <div class="swiper-slide">
-              <img loading="lazy" src="../images/brands/brand6.png" width="137" height="22" alt=""/>
-            </div>
-            <div class="swiper-slide">
-              <img loading="lazy" src="../images/brands/brand7.png" width="94" height="21" alt=""/>
-            </div>
-          </div>
-        </div>
-      </div>
 
-    </section>
   </main>
 
   <div class="mb-5 pb-xl-5"></div>

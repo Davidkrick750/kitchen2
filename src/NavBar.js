@@ -5,7 +5,7 @@ import { auth0 } from './https/Api';
 import useState from 'react-usestateref'
 import { jwtDecode } from "jwt-decode"
 import $ from 'jquery';
-function NavBar() {
+function NavBar({skoka}) {
     
 const [user,setuser,setuserRef] = useState(null)
 
@@ -198,20 +198,20 @@ $('.aside').addClass('aside_visible')
     </svg>
     <div class="header-mobile header_sticky">
       <div class="container d-flex align-items-center h-100">
-        <a class="mobile-nav-activator d-block position-relative" href="index.html#">
+        <a class="mobile-nav-activator d-block position-relative" >
           <svg class="nav-icon" width="25" height="18" viewBox="0 0 25 18" xmlns="http://www.w3.org/2000/svg"><use href="#icon_nav" /></svg>
           <span class="btn-close-lg position-absolute top-0 start-0 w-100"></span>
         </a>
   
         <div class="logo">
-          <a href="index.html">
-            <img src="./images/logo.png" alt="Uomo" class="logo__image d-block"/>
+          <a href="http://localhost:3000/">
+            <div class='stroke-text h1 smooth-16 smooth-161 text-uppercase fw-bold mb-3 mb-xl-4 mb-xl-5'>Wet-Love</div>
           </a>
         </div>
   
-        <a onClick={location.pathname=="/FAQ"? opens1:opens} class="header-tools__item header-tools__cart " data-aside="cartDrawer">
+        <a onClick={location.pathname=="/FAQ"||location.pathname=="/About"||location.pathname=="/order"||location.pathname=="/account"||location.pathname=="/checkout"? opens1:opens}  class="header-tools__item header-tools__cart " data-aside="cartDrawer">
           <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_cart" /></svg>
-          <span class="cart-amount d-block position-absolute js-cart-items-count">3</span>
+          <span class="cart-amount d-block position-absolute js-cart-items-count">{skoka}</span>
         </a>
       </div>
   
@@ -219,10 +219,7 @@ $('.aside').addClass('aside_visible')
         <div class="container">
           <form action="https://uomo-html.flexkitux.com/Demo9/search.html" method="GET" class="search-field position-relative mt-4 mb-3">
             <div class="position-relative">
-              <input class="search-field__input w-100 border rounded-1" type="text" name="search-keyword" placeholder="Search products"/>
-              <button class="btn-icon search-popup__submit pb-0 me-2" type="submit">
-                <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_search" /></svg>
-              </button>
+             
               <button class="btn-icon btn-close-lg search-popup__reset pb-0 me-2" type="reset"></button>
             </div>
   
@@ -240,27 +237,33 @@ $('.aside').addClass('aside_visible')
      
   
               {/* <li class="navigation__item">
-                <a href="https://it-basepoint.ru/FAQ" class="navigation__link js-nav-right d-flex align-items-center">FAQ<svg class="ms-auto" width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg"><use href="#icon_next_sm" /></svg></a>
+                <a href="http://localhost:3000/FAQ" class="navigation__link js-nav-right d-flex align-items-center">FAQ<svg class="ms-auto" width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg"><use href="#icon_next_sm" /></svg></a>
              
               </li> */}
 
   <li class="navigation__item">
-                <a href="https://it-basepoint.ru/"  class="navigation__link">Home</a>
+                <a href="http://localhost:3000/"  class="navigation__link">Home</a>
               </li>
   <li class="navigation__item">
-                <a href="https://it-basepoint.ru/store"  class="navigation__link">store</a>
+                <a href="http://localhost:3000/store/Vibrators"  class="navigation__link">store</a>
               </li>
               <li class="navigation__item">
-                <a href="https://it-basepoint.ru/About" class="navigation__link">About</a>
+                <a href="http://localhost:3000/Account" class="navigation__link">Favourites</a>
               </li>
               <li class="navigation__item">
-                <a href="https://it-basepoint.ru/FAQ" class="navigation__link">FAQ</a>
+                <a href="http://localhost:3000/About" class="navigation__link">About</a>
               </li>
               <li class="navigation__item">
-                <a href="https://it-basepoint.ru/FAQ" class="navigation__link">Delivery</a>
+                <a href="http://localhost:3000/FAQ" class="navigation__link">FAQ</a>
               </li>
               <li class="navigation__item">
-                <a href="https://it-basepoint.ru/FAQ" class="navigation__link">Payment</a>
+                <a href="http://localhost:3000/FAQ" class="navigation__link">Delivery</a>
+              </li>
+              <li class="navigation__item">
+                <a href="http://localhost:3000/FAQ" class="navigation__link">Payment</a>
+              </li>
+              <li class="navigation__item">
+                <a href="http://localhost:3000/Order" class="navigation__link">Orders</a>
               </li>
             </ul>
           </div>
@@ -269,56 +272,24 @@ $('.aside').addClass('aside_visible')
         <div class="border-top mt-auto pb-2">
           <div class="customer-links container mt-4 mb-2 pb-1">
             <svg class="d-inline-block align-middle" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_user" /></svg>
-            <span class="d-inline-block ms-2 text-uppercase align-middle fw-medium">My Account</span>
+            <span class="d-inline-block ms-2 text-uppercase align-middle fw-medium"><a href='http://localhost:3000/Order'>My Account</a></span>
           </div>
   
           <div class="container d-flex align-items-center">
             <label for="footerSettingsLanguage_mobile" class="me-2 text-secondary">Language</label>
             <select id="footerSettingsLanguage_mobile" class="form-select form-select-sm bg-transparent border-0" aria-label="Default select example" name="store-language">
-              <option class="footer-select__option" selected>United Kingdom | English</option>
-              <option class="footer-select__option" value="1">United States | English</option>
-              <option class="footer-select__option" value="2">German</option>
-              <option class="footer-select__option" value="3">French</option>
-              <option class="footer-select__option" value="4">Swedish</option>
+              <option class="footer-select__option" value="1">| English</option>
             </select>
           </div>
   
           <div class="container d-flex align-items-center">
             <label for="footerSettingsCurrency_mobile" class="me-2 text-secondary">Currency</label>
             <select id="footerSettingsCurrency_mobile" class="form-select form-select-sm bg-transparent border-0" aria-label="Default select example" name="store-language">
-              <option selected>$ USD</option>
-              <option value="1">£ GBP</option>
-              <option value="2">€ EURO</option>
+              <option selected> $ USD</option>
             </select>
           </div>
   
-          <ul class="container social-links list-unstyled d-flex flex-wrap mb-0">
-            <li>
-              <a href="https://www.facebook.com" class="footer__social-link d-block ps-0">
-                <svg class="svg-icon svg-icon_facebook" width="9" height="15" viewBox="0 0 9 15" xmlns="http://www.w3.org/2000/svg"><use href="#icon_facebook" /></svg>
-              </a>
-            </li>
-            <li>
-              <a href="https://twitter.com" class="footer__social-link d-block">
-                <svg class="svg-icon svg-icon_twitter" width="14" height="13" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg"><use href="#icon_twitter" /></svg>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com" class="footer__social-link d-block">
-                <svg class="svg-icon svg-icon_instagram" width="14" height="13" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg"><use href="#icon_instagram" /></svg>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.youtube.com" class="footer__social-link d-block">
-                <svg class="svg-icon svg-icon_youtube" width="16" height="11" viewBox="0 0 16 11" xmlns="http://www.w3.org/2000/svg"><path d="M15.0117 1.8584C14.8477 1.20215 14.3281 0.682617 13.6992 0.518555C12.5234 0.19043 7.875 0.19043 7.875 0.19043C7.875 0.19043 3.19922 0.19043 2.02344 0.518555C1.39453 0.682617 0.875 1.20215 0.710938 1.8584C0.382812 3.00684 0.382812 5.46777 0.382812 5.46777C0.382812 5.46777 0.382812 7.90137 0.710938 9.07715C0.875 9.7334 1.39453 10.2256 2.02344 10.3896C3.19922 10.6904 7.875 10.6904 7.875 10.6904C7.875 10.6904 12.5234 10.6904 13.6992 10.3896C14.3281 10.2256 14.8477 9.7334 15.0117 9.07715C15.3398 7.90137 15.3398 5.46777 15.3398 5.46777C15.3398 5.46777 15.3398 3.00684 15.0117 1.8584ZM6.34375 7.68262V3.25293L10.2266 5.46777L6.34375 7.68262Z"/></svg>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.pinterest.com" class="footer__social-link d-block">
-                <svg class="svg-icon svg-icon_pinterest" width="14" height="15" viewBox="0 0 14 15" xmlns="http://www.w3.org/2000/svg"><use href="#icon_pinterest" /></svg>
-              </a>
-            </li>
-          </ul>
+        
         </div>
       </nav>
     </div>
@@ -326,8 +297,8 @@ $('.aside').addClass('aside_visible')
     <header id="header" class="header header_sticky header-fullwidth">
       <div class="header-desk header-desk_type_5">
         <div class="logo">
-          <a href="https://it-basepoint.ru/">
-            <div class='stroke-text h1 smooth-16 smooth-161 text-uppercase fw-bold mb-3 mb-xl-4 mb-xl-5'>Dildo-Shop</div>
+          <a href="http://localhost:3000/">
+            <div class='stroke-text h1 smooth-16 smooth-161 text-uppercase fw-bold mb-3 mb-xl-4 mb-xl-5'>Wet-Love</div>
           </a>
         </div>
   
@@ -354,11 +325,11 @@ $('.aside').addClass('aside_visible')
         <nav class="navigation mx-auto mx-xxl-0">
           <ul class="navigation__list list-unstyled d-flex">
             <li class="navigation__item">
-              <a href="https://it-basepoint.ru" class="navigation__link">Home</a>
+              <a href="http://localhost:3000" class="navigation__link">Home</a>
        
             </li>
             <li class="navigation__item">
-              <a href="https://it-basepoint.ru/store" class="navigation__link">Shop</a>
+              <a href="http://localhost:3000/store/Vibrators" class="navigation__link">Shop</a>
               {/* <div class="mega-menu">
                 <div class="container d-flex">
                   <div class="col pe-4">
@@ -427,18 +398,20 @@ $('.aside').addClass('aside_visible')
             </li>
 
             <li class="navigation__item">
-              <a href="https://it-basepoint.ru/About" class="navigation__link">About</a>
+              <a href="http://localhost:3000/About" class="navigation__link">About</a>
             </li>
             <li class="navigation__item">
-              <a href="https://it-basepoint.ru/FAQ" class="navigation__link">FAQ</a>
+              <a href="http://localhost:3000/FAQ" class="navigation__link">FAQ</a>
             </li>
             <li class="navigation__item">
-              <a href="https://it-basepoint.ru/FAQ" class="navigation__link">Delivery</a>
+              <a href="http://localhost:3000/FAQ" class="navigation__link">Delivery</a>
             </li>
             <li class="navigation__item">
-              <a href="https://it-basepoint.ru/FAQ" class="navigation__link">Payment</a>
+              <a href="http://localhost:3000/FAQ" class="navigation__link">Payment</a>
             </li>
-
+            <li class="navigation__item">
+              <a href="http://localhost:3000/Order" class="navigation__link">Orders</a>
+            </li>
           </ul>
         </nav>
   
@@ -475,26 +448,24 @@ $('.aside').addClass('aside_visible')
             </div>
           </div>
   
-          <div class="header-tools__item hover-container">
-            <a class="header-tools__item js-open-aside" href="index.html#" data-aside="customerForms">
-              <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_user" /></svg>
-            </a>
-          </div>
-  
-          <a class="header-tools__item" href="account_wishlist.html">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use     /></svg>
+          <a href="http://localhost:3000/order" class="header-tools__item " data-aside="customerForms">
+            <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_user" /></svg>
+          </a>
+
+          <a class="header-tools__item" href="http://localhost:3000/account">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart"></use></svg>
           </a>
   
-          <a onClick={location.pathname=="/FAQ"||location.pathname=="/About"||location.pathname=="/checkout"? opens1:opens}  class="header-tools__item header-tools__cart " data-aside="cartDrawer">
+          <a onClick={location.pathname=="/FAQ"||location.pathname=="/About"||location.pathname=="/order"||location.pathname=="/account"||location.pathname=="/checkout"? opens1:opens}  class="header-tools__item header-tools__cart " data-aside="cartDrawer">
             <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_cart" /></svg>
-            <span class="cart-amount d-block position-absolute js-cart-items-count">3</span>
+            <span class="cart-amount d-block position-absolute js-cart-items-count">{skoka}</span>
           </a>
-  
+{/*   
           <a class="header-tools__item" href="index.html#" data-bs-toggle="modal" data-bs-target="#siteMap">
             <svg class="nav-icon" width="25" height="18" viewBox="0 0 25 18" xmlns="http://www.w3.org/2000/svg">
               <rect width="25" height="2"/><rect y="8" width="20" height="2"/><rect y="16" width="25" height="2"/>
             </svg>
-          </a>
+          </a> */}
         </div>
       </div>
     </header>

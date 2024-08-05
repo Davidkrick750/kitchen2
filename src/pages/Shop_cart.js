@@ -1,10 +1,11 @@
 import { jwtDecode } from "jwt-decode"
-import { check, createbasketitem,getBasketItemAll, deleteBasketItem, updateOneBasketItemMinus, updateOneBasketItemPlus } from "../https/Api"
+import { check, createbasketitem,getBasketItemAll, deleteBasketItem, updateOneBasketItemMinus, updateOneBasketItemPlus, auth0 } from "../https/Api"
 import useState from 'react-usestateref'
 import { useEffect } from "react"
 import $ from 'jquery'
 import { SHOPITEM_ROUTE, SHOPShop_checkout_ROUTE } from "../utils/consts"
 import { useNavigate } from "react-router-dom"
+import NavBar from '../NavBar';
 
 
 function Shop_cart() {
@@ -12,6 +13,12 @@ function Shop_cart() {
   const [basketItem,setbasketItem,setbasketItemRef] = useState(null)
   const [skidka,setskidka,setskidkaRef] = useState(0)
   const [subtot,setsubtot,setsubtotRef] = useState()
+
+  const [subtot1,setsubtot1,setsubtot1Ref] = useState()
+
+  const [skoka,setskoka,setskokaRef] = useState(0)
+
+
   const navigate = useNavigate()
   useEffect(()=>{
 
@@ -33,14 +40,30 @@ function Shop_cart() {
   const getBasketItem = async() => {
    
     const storedToken = localStorage.getItem('token');
-    const userId = jwtDecode(storedToken)
-    console.log(userId.id)
-    const basketitem = await getBasketItemAll(userId.id)
-    let subt = 0
-    const subtotal = basketitem.map(item=> subt = subt + (item.price*item.qauantity))
-    setsubtot(subt)
-    setbasketItem(basketitem)
-    console.log(basketitem)
+    if(storedToken==null || storedToken==undefined){
+      await auth0()
+      getBasketItem()
+    }else{
+      const userId = jwtDecode(storedToken)
+      console.log(userId.id)
+      const basketitem = await getBasketItemAll(userId.id)
+      let subt = 0
+      let subt1 = 0
+  
+      const subtotal = basketitem.map(item=> subt = subt + (item.price*item.qauantity*((100-item.skidka)/100)))
+      const subtotal1 = basketitem.map(item=> subt1 = subt1 + (item.price*item.qauantity*((100-item.skidka)/100))/((100-item.skidka)/100))
+      let skok = 0
+      const skok1 = basketitem.map(item=> skok = Number(skok) + Number(item.qauantity))
+      setskoka(skok)
+  
+      subt1 = subt1.toFixed(2)
+      subt = subt.toFixed(2)
+      setsubtot(subt1)
+      setsubtot1(subt)
+      setbasketItem(basketitem)
+      console.log(basketitem)
+    }
+
   }
 
   const plus = async(is) => {
@@ -73,6 +96,7 @@ setTimeout(() => {
       }
   return (
     <div className="App">
+          <NavBar skoka={setskokaRef?.current}/>
 
 
 <main>
@@ -87,14 +111,14 @@ setTimeout(() => {
             <em>Manage Your Items List</em>
           </span>
         </a>
-        <a onClick={()=>navigate(SHOPShop_checkout_ROUTE)} class="checkout-steps__item">
+        <a  href='http://localhost:3000/checkout'  class="checkout-steps__item">
           <span class="checkout-steps__item-number">02</span>
           <span class="checkout-steps__item-title">
             <span>Shipping and Checkout</span>
             <em>Checkout Your Items List</em>
           </span>
         </a>
-        <a onClick={()=>navigate(SHOPShop_checkout_ROUTE)}   class="checkout-steps__item">
+        <a  href='http://localhost:3000/checkout'    class="checkout-steps__item">
           <span class="checkout-steps__item-number">03</span>
           <span class="checkout-steps__item-title">
             <span>Confirmation</span>
@@ -111,7 +135,7 @@ setTimeout(() => {
                 <th></th>
                 <th>Price</th>
                 <th>Quantity</th>
-                <th>Subtotal</th>
+                <th>Total</th>
                 <th></th>
               </tr>
             </thead>
@@ -120,7 +144,7 @@ setTimeout(() => {
   <tr>
   <td>
     <div class="shopping-cart__product-item">
-      <a onClick={()=>navigate(SHOPITEM_ROUTE+'/'+item.id)}>
+      <a href={`http://localhost:3000/item/${item.ItemId}`} >
         <img loading="lazy" class='img_cs' src={item.photo} width="120" height="200" alt=""/>
       </a>
     </div>
@@ -130,8 +154,8 @@ setTimeout(() => {
     <div class="shopping-cart__product-item__detail">
       <h4><a  >{item.name}</a></h4>
       <ul class="shopping-cart__product-item__options">
-      <li>New Product</li>
-        <li>{item.description}</li>
+      {/* <li>New Product</li> */}
+        {/* <li>{item.description}</li> */}
         
       </ul>
     </div>
@@ -147,8 +171,8 @@ setTimeout(() => {
               :
               <div class="product-single__price">
                 
-              <span class="old-price">${(item.price/((100-item.skidka)/100)).toFixed(0)}</span>
-              <span class="old-price_1 padd1">${item.price}</span>
+              <span class="old-price">${item.price}</span>
+              <span class="old-price_1 padd1"> ${(item.price*((100-item.skidka)/100)).toFixed(2)}</span>
             </div>
               }
 
@@ -164,7 +188,7 @@ setTimeout(() => {
     </div> 
   </td>
   <td>
-    <span class="shopping-cart__subtotal padd1">${item.price*item.qauantity}</span>
+    <span class="shopping-cart__subtotal padd1">${((item.price*((100-item.skidka)/100))*item.qauantity).toFixed(2)}</span>
   </td>
   <td>
     <a onClick={()=>delete1(item.id)} class="remove-cart">
@@ -220,18 +244,18 @@ setTimeout(() => {
                   </tr>
                   <tr>
                     <th>DISCOUNT</th>
-                    <td>${setskidkaRef.current}</td>
+                    <td>-${(setsubtotRef?.current-setsubtot1Ref?.current).toFixed(2)}</td>
                   </tr>
                   <tr>
                     <th>Total</th>
-                    <td>${setsubtotRef?.current-setskidkaRef?.current}</td>
+                    <td>${setsubtot1Ref?.current}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <div class="mobile_fixed-btn_wrapper">
               <div class="button-wrapper container">
-                <button  onClick={()=>navigate(SHOPShop_checkout_ROUTE)} class="btn btn-primary btn-checkout">PROCEED TO CHECKOUT</button>
+                <a href='http://localhost:3000/checkout'  class="btn btn-primary btn-checkout">PROCEED TO CHECKOUT</a>
               </div>
             </div>
           </div>
@@ -259,8 +283,8 @@ setTimeout(() => {
     </div>
     <div class="cart-drawer-item__info flex-grow-1">
       <h6 class="cart-drawer-item__title fw-normal"><a >{item.name}</a></h6>
-      <p class="cart-drawer-item__option text-secondary">New Product</p>
-      <p class="cart-drawer-item__option text-secondary">{item.description}</p>
+      {/* <p class="cart-drawer-item__option text-secondary">New Product</p> */}
+      {/* <p class="cart-drawer-item__option text-secondary">{item.description}</p> */}
    
       <div class="d-flex align-items-center justify-content-between mt-1">
         <div class="qty-control position-relative">
@@ -268,7 +292,16 @@ setTimeout(() => {
           <div onClick={()=>minus(item)} class="qty-control__reduce text-start">-</div>
           <div onClick={()=>plus(item)} class="qty-control__increase text-end">+</div>
         </div>
-        <span class="cart-drawer-item__price money price">${item.price*item.qauantity}</span>
+        {item.skidka==0?
+              
+              <span class="current-price">${item.price*item.qauantity}</span>
+              :
+              <div class="product-single__price">
+                
+              <span class="old-price">${item.price*item.qauantity}</span>
+              <span class="old-price_1 padd1"> ${((item.price*((100-item.skidka)/100))*item.qauantity).toFixed(2)}</span>
+            </div>
+              }
       </div>
     </div>
 
@@ -287,10 +320,10 @@ setTimeout(() => {
   <hr class="cart-drawer-divider"/>
   <div class="d-flex justify-content-between">
     <h6 class="fs-base fw-medium">SUBTOTAL:</h6>
-    <span class="cart-subtotal fw-medium">${setsubtotRef?.current}</span>
+    <span class="cart-subtotal fw-medium">${(setsubtotRef?.current*1).toFixed(2)}</span>
   </div>
-  <a href="https://it-basepoint.ru/cart" class="btn btn-light mt-3 d-block">View Cart</a>
-  <a href="https://it-basepoint.ru/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
+  <a href="http://localhost:3000/cart" class="btn btn-light mt-3 d-block">View Cart</a>
+  <a href="http://localhost:3000/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
 </div>
 </div>
   <div class="mb-5 pb-xl-5"></div>

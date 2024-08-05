@@ -1,4 +1,4 @@
-import {  GLAV_ROUTE,SHOP_ROUTE,SHOPITEM_ROUTE,SHOPFAQ_ROUTE,SHOPAbout_ROUTE,SHOPOrder_Complete_ROUTE,SHOPShop_cart_ROUTE,SHOPShop_checkout_ROUTE } from "./utils/consts";
+import {  GLAV_ROUTE,SHOP_ROUTE,ORDER_ROUTE,ACCOUNT_ROUTE,SHOPITEM_ROUTE,SHOPFAQ_ROUTE,SHOPAbout_ROUTE,SHOPOrder_Complete_ROUTE,SHOPShop_cart_ROUTE,SHOPShop_checkout_ROUTE } from "./utils/consts";
 import GlavPages from "./pages/GlavPages";
 import Shop from "./pages/Shop";
 import Shop_item from "./pages/Shop_item";
@@ -8,6 +8,8 @@ import Shop_cart from "./pages/Shop_cart";
 import Order_Complete from "./pages/Order_Complete";
 import About from "./pages/About";
 import FAQ from "./pages/FAQ";
+import Account from "./pages/Account";
+import Orders from "./pages/Orders";
 
 
 export const adminRoutes = [
@@ -21,8 +23,8 @@ export const publicRoutes = [
         Component: GlavPages
     },
     {
-        path: SHOP_ROUTE ,
-        Component: Shop
+        path: SHOP_ROUTE + '/:id',
+        Component: Shop,
     },
     {
         path: SHOPITEM_ROUTE + '/:id',
@@ -53,5 +55,12 @@ export const publicRoutes = [
         path: SHOPAbout_ROUTE,
         Component: About
     },
- 
+    {
+        path: ACCOUNT_ROUTE,
+        Component: Account
+    },
+    {
+        path: ORDER_ROUTE,
+        Component: Orders
+    },
 ]
