@@ -9,7 +9,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://193.53.127.64:3000](http://193.53.127.64:3000) to view it in your browser.
+Open [https://wet-love.com:3000](https://wet-love.com:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.

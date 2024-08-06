@@ -69,9 +69,9 @@ if(setskokaRef?.current==null){
       <div class="row">
         <div class="col-lg-3">
           <ul class="account-nav">
-            <li><a href="http://193.53.127.64:3000/order" class="menu-link menu-link_us-s menu-link_active">Orders</a></li>
-            <li><a href="http://193.53.127.64:3000/account" class="menu-link menu-link_us-s">Wishlist</a></li>
-            <li><a href="http://193.53.127.64:3000/store/New_Sale" class="menu-link menu-link_us-s">Shop</a></li>
+            <li><a href="https://wet-love.com:3000/order" class="menu-link menu-link_us-s menu-link_active">Orders</a></li>
+            <li><a href="https://wet-love.com:3000/account" class="menu-link menu-link_us-s">Wishlist</a></li>
+            <li><a href="https://wet-love.com:3000/store/New_Sale" class="menu-link menu-link_us-s">Shop</a></li>
           </ul>
         </div>
         <div class="col-lg-9">
@@ -155,7 +155,7 @@ if(setskokaRef?.current==null){
                   <div class='d_clex_tr'>{'in delivery'}</div>
                   <div class='d_clex_tr'>{(item.price*1).toFixed(2)}</div>
 
-                  <a href='mailto:wetlove.support@gmail.com'class='d_clex_tr'> <button class="btn btn-primary">Help</button></a>
+                  <a href='mailto:david.krick750@gmail.com'class='d_clex_tr'> <button class="btn btn-primary">Help</button></a>
 
                   
                </div>

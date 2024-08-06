@@ -88,9 +88,9 @@ if(setloveRef.current==null){
       <div class="row">
         <div class="col-lg-3">
           <ul class="account-nav">
-            <li><a href="http://193.53.127.64:3000/order" class="menu-link menu-link_us-s">Orders</a></li>
-            <li><a href="http://193.53.127.64:3000/account" class="menu-link menu-link_us-s menu-link_active">Wishlist</a></li>
-            <li><a href="http://193.53.127.64:3000/store/New_Sale" class="menu-link menu-link_us-s">Shop</a></li>
+            <li><a href="https://wet-love.com:3000/order" class="menu-link menu-link_us-s">Orders</a></li>
+            <li><a href="https://wet-love.com:3000/account" class="menu-link menu-link_us-s menu-link_active">Wishlist</a></li>
+            <li><a href="https://wet-love.com:3000/store/New_Sale" class="menu-link menu-link_us-s">Shop</a></li>
           </ul>
         </div>
         <div class="col-lg-9">
@@ -158,11 +158,11 @@ if(setloveRef.current==null){
             <div class="col-6 col-md-4 col-lg-3" o>
               <div class="product-card mb-3 mb-md-4 mb-xxl-5">
                 <div  class="pc__img-wrapper">
-                  <a href={`http://193.53.127.64:3000/item/${item.Item.id}`}>
+                  <a href={`https://wet-love.com:3000/item/${item.Item.id}`}>
                     <img loading="lazy" src={item.Item.Item_photo[0].photo} width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img"/>
                     <img loading="lazy" src={item.Item.Item_photo[1].photo} width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second"/>
                   </a>
-                  <a href={`http://193.53.127.64:3000/item/${item.Item.id}`} class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside"  data-aside="cartDrawer" title="Go To Cart">Go To Cart</a>
+                  <a href={`https://wet-love.com:3000/item/${item.Item.id}`} class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside"  data-aside="cartDrawer" title="Go To Cart">Go To Cart</a>
                 </div>
 
                 <div class="pc__info position-relative">

@@ -260,11 +260,11 @@ await updateOneBasketItemPlus(is.id).then(
           <div class="shop-banner__content container position-absolute start-50 top-50 translate-middle">
             <h2 class="stroke-text h1 smooth-16 text-uppercase fw-bold mb-3 mb-xl-4 mb-xl-5">{setonecategoriaRef?.current?.name?setonecategoriaRef?.current?.name: 'We Lowe You'}</h2>
             <ul class="d-flex flex-wrap list-unstyled text-uppercase h6">
-            <li class="me-3 me-xl-4 pe-1" ><a href={`http://193.53.127.64:3000/store/New_Sale`} class={`menu-link menu-link_us-s getsale`} >50% NEW_SALE</a></li>
+            <li class="me-3 me-xl-4 pe-1" ><a href={`https://wet-love.com:3000/store/New_Sale`} class={`menu-link menu-link_us-s getsale`} >50% NEW_SALE</a></li>
           
           
             {setcategoriaRef?.current?.map(item=>
-       <li class="me-3 me-xl-4 pe-1" onClick={()=>change2(item.name)}><a href={`http://193.53.127.64:3000/store/${item.name}`} class={`menu-link menu-link_us-s get${item.name}`} >{item.name}</a></li>
+       <li class="me-3 me-xl-4 pe-1" onClick={()=>change2(item.name)}><a href={`https://wet-love.com:3000/store/${item.name}`} class={`menu-link menu-link_us-s get${item.name}`} >{item.name}</a></li>
       )}
             
 
@@ -631,7 +631,7 @@ await updateOneBasketItemPlus(is.id).then(
             <div class="col-6 col-md-4 col-lg-3" o>
               <div class="product-card mb-3 mb-md-4 mb-xxl-5">
                 <div class="pc__img-wrapper">
-                  <a href={`http://193.53.127.64:3000/item/${item.id}`} >
+                  <a href={`https://wet-love.com:3000/item/${item.id}`} >
                     <img loading="lazy" src={item.Item_photo[0]?.photo} width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img"/>
                     <img loading="lazy" src={item.Item_photo[1]?.photo} width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second"/>
                   </a>
@@ -750,8 +750,8 @@ await updateOneBasketItemPlus(is.id).then(
     <h6 class="fs-base fw-medium">SUBTOTAL:</h6>
     <span class="cart-subtotal fw-medium">${(setsubtotRef?.current*1).toFixed(2)}</span>
   </div>
-  <a href="http://193.53.127.64:3000/cart" class="btn btn-light mt-3 d-block">View Cart</a>
-  <a href="http://193.53.127.64:3000/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
+  <a href="https://wet-love.com:3000/cart" class="btn btn-light mt-3 d-block">View Cart</a>
+  <a href="https://wet-love.com:3000/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
 </div>
 </div>
   <div class="mb-5 pb-xl-5"></div>

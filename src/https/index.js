@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const $host = axios.create({
-    baseURL:'http://193.53.127.64:5003/'
+    baseURL:'http://wet-love.com:8081/'
 })
 
 export {

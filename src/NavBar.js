@@ -204,7 +204,7 @@ $('.aside').addClass('aside_visible')
         </a>
   
         <div class="logo">
-          <a href="http://193.53.127.64:3000/">
+          <a href="https://wet-love.com:3000/">
             <div class='stroke-text h1 smooth-16 smooth-161 text-uppercase fw-bold mb-3 mb-xl-4 mb-xl-5'>Wet-Love</div>
           </a>
         </div>
@@ -237,33 +237,33 @@ $('.aside').addClass('aside_visible')
      
   
               {/* <li class="navigation__item">
-                <a href="http://193.53.127.64:3000/FAQ" class="navigation__link js-nav-right d-flex align-items-center">FAQ<svg class="ms-auto" width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg"><use href="#icon_next_sm" /></svg></a>
+                <a href="https://wet-love.com:3000/FAQ" class="navigation__link js-nav-right d-flex align-items-center">FAQ<svg class="ms-auto" width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg"><use href="#icon_next_sm" /></svg></a>
              
               </li> */}
 
   <li class="navigation__item">
-                <a href="http://193.53.127.64:3000/"  class="navigation__link">Home</a>
+                <a href="https://wet-love.com:3000/"  class="navigation__link">Home</a>
               </li>
   <li class="navigation__item">
-                <a href="http://193.53.127.64:3000/store/Vibrators"  class="navigation__link">store</a>
+                <a href="https://wet-love.com:3000/store/Vibrators"  class="navigation__link">store</a>
               </li>
               <li class="navigation__item">
-                <a href="http://193.53.127.64:3000/Account" class="navigation__link">Favourites</a>
+                <a href="https://wet-love.com:3000/Account" class="navigation__link">Favourites</a>
               </li>
               <li class="navigation__item">
-                <a href="http://193.53.127.64:3000/About" class="navigation__link">About</a>
+                <a href="https://wet-love.com:3000/About" class="navigation__link">About</a>
               </li>
               <li class="navigation__item">
-                <a href="http://193.53.127.64:3000/FAQ" class="navigation__link">FAQ</a>
+                <a href="https://wet-love.com:3000/FAQ" class="navigation__link">FAQ</a>
               </li>
               <li class="navigation__item">
-                <a href="http://193.53.127.64:3000/FAQ" class="navigation__link">Delivery</a>
+                <a href="https://wet-love.com:3000/FAQ" class="navigation__link">Delivery</a>
               </li>
               <li class="navigation__item">
-                <a href="http://193.53.127.64:3000/FAQ" class="navigation__link">Payment</a>
+                <a href="https://wet-love.com:3000/FAQ" class="navigation__link">Payment</a>
               </li>
               <li class="navigation__item">
-                <a href="http://193.53.127.64:3000/Order" class="navigation__link">Orders</a>
+                <a href="https://wet-love.com:3000/Order" class="navigation__link">Orders</a>
               </li>
             </ul>
           </div>
@@ -272,7 +272,7 @@ $('.aside').addClass('aside_visible')
         <div class="border-top mt-auto pb-2">
           <div class="customer-links container mt-4 mb-2 pb-1">
             <svg class="d-inline-block align-middle" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_user" /></svg>
-            <span class="d-inline-block ms-2 text-uppercase align-middle fw-medium"><a href='http://193.53.127.64:3000/Order'>My Account</a></span>
+            <span class="d-inline-block ms-2 text-uppercase align-middle fw-medium"><a href='https://wet-love.com:3000/Order'>My Account</a></span>
           </div>
   
           <div class="container d-flex align-items-center">
@@ -297,7 +297,7 @@ $('.aside').addClass('aside_visible')
     <header id="header" class="header header_sticky header-fullwidth">
       <div class="header-desk header-desk_type_5">
         <div class="logo">
-          <a href="http://193.53.127.64:3000/">
+          <a href="https://wet-love.com:3000/">
             <div class='stroke-text h1 smooth-16 smooth-161 text-uppercase fw-bold mb-3 mb-xl-4 mb-xl-5'>Wet-Love</div>
           </a>
         </div>
@@ -325,11 +325,11 @@ $('.aside').addClass('aside_visible')
         <nav class="navigation mx-auto mx-xxl-0">
           <ul class="navigation__list list-unstyled d-flex">
             <li class="navigation__item">
-              <a href="http://193.53.127.64:3000" class="navigation__link">Home</a>
+              <a href="https://wet-love.com:3000" class="navigation__link">Home</a>
        
             </li>
             <li class="navigation__item">
-              <a href="http://193.53.127.64:3000/store/Vibrators" class="navigation__link">Shop</a>
+              <a href="https://wet-love.com:3000/store/Vibrators" class="navigation__link">Shop</a>
               {/* <div class="mega-menu">
                 <div class="container d-flex">
                   <div class="col pe-4">
@@ -398,19 +398,19 @@ $('.aside').addClass('aside_visible')
             </li>
 
             <li class="navigation__item">
-              <a href="http://193.53.127.64:3000/About" class="navigation__link">About</a>
+              <a href="https://wet-love.com:3000/About" class="navigation__link">About</a>
             </li>
             <li class="navigation__item">
-              <a href="http://193.53.127.64:3000/FAQ" class="navigation__link">FAQ</a>
+              <a href="https://wet-love.com:3000/FAQ" class="navigation__link">FAQ</a>
             </li>
             <li class="navigation__item">
-              <a href="http://193.53.127.64:3000/FAQ" class="navigation__link">Delivery</a>
+              <a href="https://wet-love.com:3000/FAQ" class="navigation__link">Delivery</a>
             </li>
             <li class="navigation__item">
-              <a href="http://193.53.127.64:3000/FAQ" class="navigation__link">Payment</a>
+              <a href="https://wet-love.com:3000/FAQ" class="navigation__link">Payment</a>
             </li>
             <li class="navigation__item">
-              <a href="http://193.53.127.64:3000/Order" class="navigation__link">Orders</a>
+              <a href="https://wet-love.com:3000/Order" class="navigation__link">Orders</a>
             </li>
           </ul>
         </nav>
@@ -448,11 +448,11 @@ $('.aside').addClass('aside_visible')
             </div>
           </div>
   
-          <a href="http://193.53.127.64:3000/order" class="header-tools__item " data-aside="customerForms">
+          <a href="https://wet-love.com:3000/order" class="header-tools__item " data-aside="customerForms">
             <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_user" /></svg>
           </a>
 
-          <a class="header-tools__item" href="http://193.53.127.64:3000/account">
+          <a class="header-tools__item" href="https://wet-love.com:3000/account">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart"></use></svg>
           </a>
   

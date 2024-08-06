@@ -21,7 +21,7 @@ function Footer() {
           <div class="row row-cols-lg-5 row-cols-2">
             <div class="footer-column footer-store-info col-12 mb-4 mb-lg-0">
               <div class="logo">
-              <a href="http://193.53.127.64:3000/">
+              <a href="https://wet-love.com:3000/">
             <div class='stroke-text h1 smooth-16 smooth-161 text-uppercase fw-bold mb-3 mb-xl-4 mb-xl-5'>Wet-Love</div>
           </a>
               </div>
@@ -29,7 +29,7 @@ function Footer() {
               </p>
     
               <p class="m-0">
-                <strong class="fw-medium">wetlove.support@gmail.com</strong>
+                <strong class="fw-medium">david.krick750@gmail.com</strong>
               </p>
             
               {/* <ul class="social-links list-unstyled d-flex flex-wrap mb-0">
@@ -64,21 +64,21 @@ function Footer() {
             <div class="footer-column footer-menu mb-4 mb-lg-0">
               <h6 class="sub-menu__title text-uppercase">Company</h6>
               <ul class="sub-menu__list list-unstyled">
-                <li class="sub-menu__item"><a href="http://193.53.127.64:3000/About" class="menu-link menu-link_us-s">About Us</a></li>
-                <li class="sub-menu__item"><a href="http://193.53.127.64:3000/FAQ" class="menu-link menu-link_us-s">FAQ</a></li>
-                <li class="sub-menu__item"><a href="http://193.53.127.64:3000/FAQ" class="menu-link menu-link_us-s">DELIVERY</a></li>
-                <li class="sub-menu__item"><a href="http://193.53.127.64:3000/FAQ" class="menu-link menu-link_us-s">PAYENT</a></li>
+                <li class="sub-menu__item"><a href="https://wet-love.com:3000/About" class="menu-link menu-link_us-s">About Us</a></li>
+                <li class="sub-menu__item"><a href="https://wet-love.com:3000/FAQ" class="menu-link menu-link_us-s">FAQ</a></li>
+                <li class="sub-menu__item"><a href="https://wet-love.com:3000/FAQ" class="menu-link menu-link_us-s">DELIVERY</a></li>
+                <li class="sub-menu__item"><a href="https://wet-love.com:3000/FAQ" class="menu-link menu-link_us-s">PAYENT</a></li>
               </ul>
             </div>
     
             <div class="footer-column footer-menu mb-4 mb-lg-0">
               <h6 class="sub-menu__title text-uppercase">Shop</h6>
               <ul class="sub-menu__list list-unstyled">
-                <li class="sub-menu__item"><a href="http://193.53.127.64:3000/store/New_Sale" class="menu-link menu-link_us-s">New Sale</a></li>
-                <li class="sub-menu__item"><a href="http://193.53.127.64:3000/store/Male_Toys" class="menu-link menu-link_us-s">Male Toys</a></li>
-                <li class="sub-menu__item"><a href="http://193.53.127.64:3000/store/Vibrators" class="menu-link menu-link_us-s">Vibrators</a></li>
-                <li class="sub-menu__item"><a href="http://193.53.127.64:3000/store/Dildos" class="menu-link menu-link_us-s">Dildos</a></li>
-                <li class="sub-menu__item"><a href="http://193.53.127.64:3000/store/Bondage" class="menu-link menu-link_us-s">Bondage</a></li>
+                <li class="sub-menu__item"><a href="https://wet-love.com:3000/store/New_Sale" class="menu-link menu-link_us-s">New Sale</a></li>
+                <li class="sub-menu__item"><a href="https://wet-love.com:3000/store/Male_Toys" class="menu-link menu-link_us-s">Male Toys</a></li>
+                <li class="sub-menu__item"><a href="https://wet-love.com:3000/store/Vibrators" class="menu-link menu-link_us-s">Vibrators</a></li>
+                <li class="sub-menu__item"><a href="https://wet-love.com:3000/store/Dildos" class="menu-link menu-link_us-s">Dildos</a></li>
+                <li class="sub-menu__item"><a href="https://wet-love.com:3000/store/Bondage" class="menu-link menu-link_us-s">Bondage</a></li>
 
               </ul>
             </div>
@@ -86,14 +86,14 @@ function Footer() {
             <div class="footer-column footer-menu mb-4 mb-lg-0">
               <h6 class="sub-menu__title text-uppercase">Account</h6>
               <ul class="sub-menu__list list-unstyled">
-                <li class="sub-menu__item"><a href="http://193.53.127.64:3000/cart" class="menu-link menu-link_us-s">Basket</a></li>
-                <li class="sub-menu__item"><a href="http://193.53.127.64:3000/order" class="menu-link menu-link_us-s">Orders</a></li>
-                <li class="sub-menu__item"><a href="http://193.53.127.64:3000/account" class="menu-link menu-link_us-s">Wishlist</a></li>
+                <li class="sub-menu__item"><a href="https://wet-love.com:3000/cart" class="menu-link menu-link_us-s">Basket</a></li>
+                <li class="sub-menu__item"><a href="https://wet-love.com:3000/order" class="menu-link menu-link_us-s">Orders</a></li>
+                <li class="sub-menu__item"><a href="https://wet-love.com:3000/account" class="menu-link menu-link_us-s">Wishlist</a></li>
          
-                <li class="sub-menu__item"><a href="http://193.53.127.64:3000/FAQ" class="menu-link menu-link_us-s">Shipping & Payment</a></li>
-                <li class="sub-menu__item"><a href="http://193.53.127.64:3000/FAQ" class="menu-link menu-link_us-s">Privacy Policy</a></li>
-                <li class="sub-menu__item"><a href="http://193.53.127.64:3000/FAQ" class="menu-link menu-link_us-s">Return Policy</a></li>
-                <li class="sub-menu__item"><a href="http://193.53.127.64:3000/FAQ" class="menu-link menu-link_us-s">Edit Terms & Conditions</a></li>
+                <li class="sub-menu__item"><a href="https://wet-love.com:3000/FAQ" class="menu-link menu-link_us-s">Shipping & Payment</a></li>
+                <li class="sub-menu__item"><a href="https://wet-love.com:3000/FAQ" class="menu-link menu-link_us-s">Privacy Policy</a></li>
+                <li class="sub-menu__item"><a href="https://wet-love.com:3000/FAQ" class="menu-link menu-link_us-s">Return Policy</a></li>
+                <li class="sub-menu__item"><a href="https://wet-love.com:3000/FAQ" class="menu-link menu-link_us-s">Edit Terms & Conditions</a></li>
 
 
 
@@ -122,21 +122,21 @@ function Footer() {
       <footer class="footer-mobile container w-100 px-5 d-md-none bg-body">
         <div class="row text-center">
           <div class="col-4">
-            <a href="http://193.53.127.64:3000" class="footer-mobile__link d-flex flex-column align-items-center">
+            <a href="https://wet-love.com:3000" class="footer-mobile__link d-flex flex-column align-items-center">
               <svg class="d-block" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_home" /></svg>
               <span>Home</span>
             </a>
           </div> 
     
           <div class="col-4">
-            <a href="http://193.53.127.64:3000/store/New_Sale" class="footer-mobile__link d-flex flex-column align-items-center">
+            <a href="https://wet-love.com:3000/store/New_Sale" class="footer-mobile__link d-flex flex-column align-items-center">
               <svg class="d-block" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_hanger" /></svg>
               <span>Shop</span>
             </a>
           </div> 
     
           <div class="col-4">
-          <a href="http://193.53.127.64:3000/account" class="footer-mobile__link d-flex flex-column align-items-center">
+          <a href="https://wet-love.com:3000/account" class="footer-mobile__link d-flex flex-column align-items-center">
           <div class="position-relative">
             <svg class="d-block" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart"></use></svg>
             {/* <span class="wishlist-amount d-block position-absolute js-wishlist-count">3</span> */}
@@ -182,7 +182,7 @@ function Footer() {
                   <div class="row">
                     <ul class="nav nav-tabs list-unstyled col-5 d-block" id="myTab" role="tablist">
                       <li class="nav-item position-relative" role="presentation">
-                        <a class="nav-link nav-link_rline active" id="tab-item-1-tab" data-bs-toggle="tab" href="http://193.53.127.64:3000/" role="tab" aria-controls="tab-item-1" aria-selected="true"><span class="rline-content">WOMEN</span></a>
+                        <a class="nav-link nav-link_rline active" id="tab-item-1-tab" data-bs-toggle="tab" href="https://wet-love.com:3000/" role="tab" aria-controls="tab-item-1" aria-selected="true"><span class="rline-content">WOMEN</span></a>
                       </li>
                       <li class="nav-item position-relative" role="presentation">
                         <a class="nav-link nav-link_rline" id="tab-item-2-tab" data-bs-toggle="tab" href="index.html#tab-item-2" role="tab" aria-controls="tab-item-2" aria-selected="false"><span class="rline-content">MAN</span></a>

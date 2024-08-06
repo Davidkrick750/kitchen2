@@ -189,7 +189,7 @@ function GlavPages() {
               <h2 class="text-uppercase h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Sex toys for you</h2>
               <p class="animate animate_fade animate_btt animate_delay-6">We have a sale of toys to strengthen the family<br/>Love each other
 </p>
-              <a href="http://193.53.127.64:3000/store/New_Sale" class="btn-link btn-link_sm default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-7">Buy Now</a>
+              <a href="https://wet-love.com:3000/store/New_Sale" class="btn-link btn-link_sm default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-7">Buy Now</a>
             </div>
           </div>
         </div>
@@ -202,7 +202,7 @@ function GlavPages() {
               <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">TRENDING 2024</h6>
               <h2 class="text-uppercase h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Bondage </h2>
               <p class="animate animate_fade animate_btt animate_delay-6">Discover tie-and-tease play with our huge range of bondage gear. Whether you're a bondage beginner or a Shibari expert, we have a full range of <br/>BDSM toys and accessories, from handcuffs and restraints, to spankers, ticklers and floggers.</p>
-              <a href="http://193.53.127.64:3000/store/Bondage" class="btn-link btn-link_sm default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-7">Buy Now</a>
+              <a href="https://wet-love.com:3000/store/Bondage" class="btn-link btn-link_sm default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-7">Buy Now</a>
             </div>
           </div>
         </div>
@@ -216,7 +216,7 @@ function GlavPages() {
               <h2 class="text-uppercase h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Vibrators</h2>
               <p class="animate animate_fade animate_btt animate_delay-6">On your own or with a partner, a vibrator makes it so much easier to reach orgasm. 
 <br/>Browse our collection of best-selling sex toys for women and read customer reviews to help you pick the best women's vibrator.</p>
-              <a href="http://193.53.127.64:3000/store/Vibrators" class="btn-link btn-link_sm default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-7">Buy Now</a>
+              <a href="https://wet-love.com:3000/store/Vibrators" class="btn-link btn-link_sm default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-7">Buy Now</a>
             </div>
           </div>
         </div>
@@ -229,7 +229,7 @@ function GlavPages() {
               <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">TRENDING 2023</h6>
               <h2 class="text-uppercase h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Discounts up to 50%</h2>
               <p class="animate animate_fade animate_btt animate_delay-6">Discounts of up to 50% on vibrators, dildos and sex toys<br/></p>
-              <a href="http://193.53.127.64:3000/store/New_Sale" class="btn-link btn-link_sm default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-7">Buy Now</a>
+              <a href="https://wet-love.com:3000/store/New_Sale" class="btn-link btn-link_sm default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-7">Buy Now</a>
             </div>
           </div>
         </div>
@@ -418,7 +418,7 @@ function GlavPages() {
                 
                 <div class="col-md-4">
                 <div class="category-banner__item border-radius-10 mb-5">
-                  <a href={`http://193.53.127.64:3000/store/${item.name}`}>
+                  <a href={`https://wet-love.com:3000/store/${item.name}`}>
                   <img loading="lazy"  class="of_cover" src={item?.photo} width="680" height="515" alt={item.name} title={item.name}/>
                   </a>
                   <div class="category-banner__item-mark">
@@ -426,7 +426,7 @@ function GlavPages() {
                   </div>
                   <div class="category-banner__item-content">
                     <h3 class="mb-0">{item.name}</h3>
-                    <a href={`http://193.53.127.64:3000/store/${item.name}`} class="btn-link default-underline text-uppercase fw-medium">Shop Now</a>
+                    <a href={`https://wet-love.com:3000/store/${item.name}`} class="btn-link default-underline text-uppercase fw-medium">Shop Now</a>
                   </div>
                 </div>
                 <div class="pb-2"></div>
@@ -450,7 +450,7 @@ function GlavPages() {
 
        
 
-            <a href="http://193.53.127.64:3000/store/New_Sale" class="btn-link default-underline text-uppercase fw-medium mt-3">View All</a>
+            <a href="https://wet-love.com:3000/store/New_Sale" class="btn-link default-underline text-uppercase fw-medium mt-3">View All</a>
           </div>
           <div class="col-md-6 col-lg-8 col-xl-80per">
             <div class="position-relative">
@@ -611,7 +611,7 @@ setItemsSkidkaRef?.current==null?
 {setItemsSkidkaRef?.current?.map(item=>
 <div class="mr_15 swiper-slide product-card product-card_style3">
 <div class="pc__img-wrapper">
-  <a   href={`http://193.53.127.64:3000/item/${item.id}`}  >
+  <a   href={`https://wet-love.com:3000/item/${item.id}`}  >
     <img loading="lazy" title={item.name} alt={item.name}src={item.Item_photo[0]?.photo} width="258" height="313" class="pc__img"/>
     <img loading="lazy" title={item.name} alt={item.name} src={item.Item_photo[1]?.photo} width="258" height="313"  class="pc__img pc__img-second"/>
   </a>
@@ -625,7 +625,7 @@ setItemsSkidkaRef?.current==null?
   </div>
 
   {/* <div class="anim_appear-bottom position-absolute bottom-0 start-25 d-none d-sm-flex align-items-center bg-body">
-    <a href={`http://193.53.127.64:3000/${item.id}`} class="btn-link btn-link_lg  text-uppercase fw-medium  " title="Go To Cart">Go To Cart</a>
+    <a href={`https://wet-love.com:3000/${item.id}`} class="btn-link btn-link_lg  text-uppercase fw-medium  " title="Go To Cart">Go To Cart</a>
 
 
   </div> */}
@@ -649,7 +649,7 @@ setItemsSkidkaRef?.current==null?
       <div class="image-banner__content container py-3">
         <h2 class="text-white fw-bold">Male Toys</h2>
         <p class="text-white mb-4">New Collection Male Toys</p>
-        <a href='http://193.53.127.64:3000/store/Male_Toys' class="btn btn-outline-primary border-0 fs-base text-uppercase fw-medium btn-55 d-inline-flex align-items-center">
+        <a href='https://wet-love.com:3000/store/Male_Toys' class="btn btn-outline-primary border-0 fs-base text-uppercase fw-medium btn-55 d-inline-flex align-items-center">
           <span class="text_dash_half">Shop Now</span>
         </a>
       </div>
@@ -925,11 +925,11 @@ setonecategoriaRef?.current==null?
             <div class="col-6 col-md-4 col-lg-3">
               <div class="product-card mb-3 mb-md-4 mb-xxl-5">
                 <div class="pc__img-wrapper">
-                  <a href={`http://193.53.127.64:3000/item/${item.id}`} >
+                  <a href={`https://wet-love.com:3000/item/${item.id}`} >
                     <img loading="lazy"alt={item.name} title={item.name} src={item.Item_photo[0]?.photo} width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img"/>
                     <img loading="lazy" alt={item.name} title={item.name} src={item.Item_photo[1]?.photo} width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second"/>
                   </a>
-                  <a  href={`http://193.53.127.64:3000/item/${item.id}`} class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium" title="Add To Cart">Go To Cart</a>
+                  <a  href={`https://wet-love.com:3000/item/${item.id}`} class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium" title="Add To Cart">Go To Cart</a>
                 </div>
 
                 <div class="pc__info position-relative">
@@ -1166,7 +1166,7 @@ setonecategoriaRef?.current==null?
   setonecategoria1Ref?.current?.map(item=>
 
     <div class="instagram__tile">
-          <a href={`http://193.53.127.64:3000/item/${item.id}`} target="_blank" class="position-relative overflow-hidden d-block effect overlay-plus">
+          <a href={`https://wet-love.com:3000/item/${item.id}`} target="_blank" class="position-relative overflow-hidden d-block effect overlay-plus">
             <img loading="lazy" class="instagram__img" src={item.Item_photo[0]?.photo} width="232" height="232" alt="Insta image 20"/>
           </a>
     </div>
@@ -1270,8 +1270,8 @@ setonecategoriaRef?.current==null?
     <h6 class="fs-base fw-medium">SUBTOTAL:</h6>
     <span class="cart-subtotal fw-medium">${(setsubtotRef?.current*1).toFixed(2)}</span>
   </div>
-  <a href="http://193.53.127.64:3000/cart" class="btn btn-light mt-3 d-block">View Cart</a>
-  <a href="http://193.53.127.64:3000/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
+  <a href="https://wet-love.com:3000/cart" class="btn btn-light mt-3 d-block">View Cart</a>
+  <a href="https://wet-love.com:3000/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
 </div>
 </div>
 
