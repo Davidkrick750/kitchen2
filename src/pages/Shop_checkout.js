@@ -129,7 +129,7 @@ if(Name!=''|| Familia!=''|| Region!=''|| Street1!=''|| Street2!=''|| City!=''|| 
     <section class="shop-checkout container">
       <h2 class="page-title">Shipping and Checkout</h2>
       <div class="checkout-steps">
-        <a  href='https://wet-love.com:3000/cart'  class="checkout-steps__item active">
+        <a  href='https://wet-love.com/cart'  class="checkout-steps__item active">
           <span class="checkout-steps__item-number">01</span>
           <span class="checkout-steps__item-title">
             <span>Shopping Bag</span>
