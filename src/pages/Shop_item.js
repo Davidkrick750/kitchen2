@@ -221,13 +221,13 @@ await updateOneBasketItemPlus(is.id).then(
             <div class="mb-md-1 pb-md-3"></div>
             <div class="d-flex justify-content-between mb-4 pb-md-2">
               <div class=" text_al_s breadcrumb mb-0 d-none d-md-block flex-grow-1">
-                <a   href='http://localhost:3000'  class="menu-link menu-link_us-s text-uppercase fw-medium">Home</a>
+                <a   href='http://193.53.127.64:3000'  class="menu-link menu-link_us-s text-uppercase fw-medium">Home</a>
                 <span class="breadcrumb-separator menu-link fw-medium ps-1 pe-1">/</span>
-                <a  href='http://localhost:3000/store/New_Sale'    class="menu-link menu-link_us-s text-uppercase fw-medium">The Shop</a>
+                <a  href='http://193.53.127.64:3000/store/New_Sale'    class="menu-link menu-link_us-s text-uppercase fw-medium">The Shop</a>
               </div>
               <div class="product-single__prev-next d-flex align-items-center justify-content-between justify-content-md-end flex-grow-1">
-                <a href='http://localhost:3000/' class="text-uppercase fw-medium"><svg class="mb-1px" width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use     /></svg><span class="menu-link menu-link_us-s">HOME</span></a>
-                <a href='http://localhost:3000/cart'  class="text-uppercase fw-medium"><span class="menu-link menu-link_us-s">BASKET</span><svg class="mb-1px" width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use /></svg></a>
+                <a href='http://193.53.127.64:3000/' class="text-uppercase fw-medium"><svg class="mb-1px" width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use     /></svg><span class="menu-link menu-link_us-s">HOME</span></a>
+                <a href='http://193.53.127.64:3000/cart'  class="text-uppercase fw-medium"><span class="menu-link menu-link_us-s">BASKET</span><svg class="mb-1px" width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use /></svg></a>
               </div>
             </div>
             <h1 class="product-single__name text_al_s" >{setcategoriaRef?.current?.name}</h1>
@@ -602,7 +602,7 @@ setcategoriaRef?.current==null?
 }</div>
            <div class="pc__img-wrapper">
             
-             <a href={`http://localhost:3000/item/${item.id}`}  >
+             <a href={`http://193.53.127.64:3000/item/${item.id}`}  >
               
                <img loading="lazy" src={item.Item_photo[0]?.photo} width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img"/>
                <img loading="lazy" src={item.Item_photo[0]?.photo} width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second"/>
@@ -693,8 +693,8 @@ setcategoriaRef?.current==null?
     <h6 class="fs-base fw-medium">SUBTOTAL:</h6>
     <span class="cart-subtotal fw-medium">${(setsubtotRef?.current*1).toFixed(2)}</span>
   </div>
-  <a href="http://localhost:3000/cart" class="btn btn-light mt-3 d-block">View Cart</a>
-  <a href="http://localhost:3000/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
+  <a href="http://193.53.127.64:3000/cart" class="btn btn-light mt-3 d-block">View Cart</a>
+  <a href="http://193.53.127.64:3000/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
 </div>
 </div>
   <div class="mb-5 pb-xl-5"></div>
