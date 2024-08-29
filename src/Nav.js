@@ -24,7 +24,7 @@ useEffect(()=>{
 
 
     const get = async() => {
-        const storedToken = localStorage.getItem('token');
+        const storedToken = localStorage.getItem('token1');
         if(storedToken){
           console.log('storedToken')
         }else{

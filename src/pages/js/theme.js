@@ -832,67 +832,7 @@ function pureFadeOut(e) {
     return CustomerSideForm;
   })();
 
-  UomoSections.CartDrawer = (function () {
-    function CartDrawer () {
-      this.selectors = {
-        aside:            '.aside.cart-drawer',
-        asideHeader:      '.aside-header',
-        cartItemRemover:  '.js-cart-item-remove',
-        cartActions:      '.cart-drawer-actions',
-        cartItemsList:    '.cart-drawer-items-list'
-      }
 
-      this.asideContentMargin = 30;
-
-      this.$aside = document.querySelector(this.selectors.aside);
-      if (!this.$aside) {
-        return false;
-      }
-
-      this.$header = this.$aside.querySelector(this.selectors.asideHeader);
-      this.$actions = this.$aside.querySelector(this.selectors.cartActions);
-      this.$list = this.$aside.querySelector(this.selectors.cartItemsList);
-
-      setTimeout(() => {
-        this._initCartItemsList();
-        this._initCartItemRemoval();
-      }, 1000);
-    }
-
-    CartDrawer.prototype = Object.assign({}, CartDrawer.prototype, {
-      _initCartItemsList: function () {
-        if (!UomoHelpers.isMobile) {
-          return;
-        }
-
-        const drawerHeight = this.$aside.offsetHeight;
-        const headerHeight = this.$header ? this.$header.offsetHeight : 0;
-        const actionsHeader = this.$actions ? this.$actions.offsetHeight : 0;
-
-        if (this.$list) {
-          this.$list.style.maxHeight = drawerHeight - headerHeight - actionsHeader - this.asideContentMargin * 2 + 'px';
-        }
-      },
-
-      _initCartItemRemoval: function () {
-        this.$aside.querySelectorAll(this.selectors.cartItemRemover).forEach( el => {
-          el.addEventListener('click', (event) => {
-            event.preventDefault();
-            const $parentEl = event.target.parentElement;
-            const $divider  = $parentEl.nextElementSibling;
-            $parentEl.classList.add('_removed');
-            $divider && $divider.classList.contains('cart-drawer-divider') && $divider.classList.add('_removed');
-            setTimeout(() => {
-              $parentEl.remove();
-              $divider && $divider.classList.contains('cart-drawer-divider') && $divider.remove();
-            }, 350);
-          });
-        });
-      }
-    });
-
-    return CartDrawer;
-  })();
 
   UomoSections.SwiperSlideshow = (function () {
     function SwiperSlideshow () {

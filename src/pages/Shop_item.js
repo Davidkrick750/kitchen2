@@ -56,7 +56,7 @@ function Shop_item() {
 
       const getBasketItem = async() => {
    
-        const storedToken = localStorage.getItem('token');
+        const storedToken = localStorage.getItem('token1');
         if(storedToken==null || storedToken==undefined){
           await auth0()
           getBasketItem()
@@ -77,7 +77,7 @@ function Shop_item() {
 
       }
     const check1 = async(id2) => {
-      const storedToken = localStorage.getItem('token');
+      const storedToken = localStorage.getItem('token1');
       if(storedToken==null || storedToken==undefined){
         await auth0()
         check1()
@@ -200,11 +200,12 @@ await updateOneBasketItemPlus(is.id).then(
                 
      
     
-              setcategoriaRef?.current?.Item_photo.map(item=>
+              setcategoriaRef?.current?.Item_photo.map((item,index)=>
                 
-              
+              index <5 ?
               <img loading="lazy" class="h-auto w500" src={item.photo}  alt=""/>
-            
+              :
+              <img loading="lazy" class="h-auto w500" style={{display:'none'}} src={item.photo}  alt=""/>
               )
               
               }
@@ -221,13 +222,13 @@ await updateOneBasketItemPlus(is.id).then(
             <div class="mb-md-1 pb-md-3"></div>
             <div class="d-flex justify-content-between mb-4 pb-md-2">
               <div class=" text_al_s breadcrumb mb-0 d-none d-md-block flex-grow-1">
-                <a   href='https://wet-love.com'  class="menu-link menu-link_us-s text-uppercase fw-medium">Home</a>
+                <a   href='https://kitchen-glow.com'  class="menu-link menu-link_us-s text-uppercase fw-medium">Home</a>
                 <span class="breadcrumb-separator menu-link fw-medium ps-1 pe-1">/</span>
-                <a  href='https://wet-love.com/store/New_Sale'    class="menu-link menu-link_us-s text-uppercase fw-medium">The Shop</a>
+                <a  href='https://kitchen-glow.com/store/New_Sale'    class="menu-link menu-link_us-s text-uppercase fw-medium">The Shop</a>
               </div>
               <div class="product-single__prev-next d-flex align-items-center justify-content-between justify-content-md-end flex-grow-1">
-                <a href='https://wet-love.com/' class="text-uppercase fw-medium"><svg class="mb-1px" width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use     /></svg><span class="menu-link menu-link_us-s">HOME</span></a>
-                <a href='https://wet-love.com/cart'  class="text-uppercase fw-medium"><span class="menu-link menu-link_us-s">BASKET</span><svg class="mb-1px" width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use /></svg></a>
+                <a href='https://kitchen-glow.com/' class="text-uppercase fw-medium"><svg class="mb-1px" width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use     /></svg><span class="menu-link menu-link_us-s">HOME</span></a>
+                <a href='https://kitchen-glow.com/cart'  class="text-uppercase fw-medium"><span class="menu-link menu-link_us-s">BASKET</span><svg class="mb-1px" width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use /></svg></a>
               </div>
             </div>
             <h1 class="product-single__name text_al_s" >{setcategoriaRef?.current?.name}</h1>
@@ -602,7 +603,7 @@ setcategoriaRef?.current==null?
 }</div>
            <div class="pc__img-wrapper">
             
-             <a href={`https://wet-love.com/item/${item.id}`}  >
+             <a href={`https://kitchen-glow.com/item/${item.id}`}  >
               
                <img loading="lazy" src={item.Item_photo[0]?.photo} width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img"/>
                <img loading="lazy" src={item.Item_photo[0]?.photo} width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second"/>
@@ -613,7 +614,7 @@ setcategoriaRef?.current==null?
 
            <div class="pc__info position-relative">
              <p class="pc__category">For you</p>
-             <h6 class="pc__title"><a >{item.name}</a></h6>
+             <h6 class="pc__title"><a href={`https://kitchen-glow.com/item/${item.id}`}>{item.name}</a></h6>
              <div class="product-card__price d-flex">
                <span class="money price">${item.price}</span>
                
@@ -650,12 +651,12 @@ setcategoriaRef?.current==null?
   <button onClick={closes} class="btn-close-lg js-close-aside btn-close-aside ms-auto"></button>
 </div>
 
-<div class="aside-content cart-drawer-items-list">
+<div class=" cart-drawer-items-list">
 
 
  
 {setbasketItemRef?.current?.map(item=>
-  <div >
+  <div class='cart-drawer-item '>
       <div class="cart-drawer-item d-flex position-relative">
     <div class="position-relative">
       <a >
@@ -673,8 +674,13 @@ setcategoriaRef?.current==null?
           <div onClick={()=>minus(item)} class="qty-control__reduce text-start">-</div>
           <div onClick={()=>plus(item)} class="qty-control__increase text-end">+</div>
         </div>
-        <span class="money price price-old">${item.price*item.qauantity}</span><span class="cart-drawer-item__price money price">${ (item.price*item.qauantity*((100-item.skidka)/100)).toFixed(2)}</span>
-      </div>
+        {
+        item.skidka!=0?
+              <><span class="money price price-old">${item.price*item.qauantity}</span><span class="cart-drawer-item__price money price">${ (item.price*item.qauantity*((100-item.skidka)/100)).toFixed(2)}</span></>  
+:
+<><span class="cart-drawer-item__price money price">${ (item.price*item.qauantity*((100-item.skidka)/100)).toFixed(2)}</span></>  
+
+        }      </div>
     </div>
 
     <button onClick={()=>delete1(item.id)} class="btn-close-xs position-absolute top-0 end-0 js-cart-item-remove"></button>
@@ -693,8 +699,8 @@ setcategoriaRef?.current==null?
     <h6 class="fs-base fw-medium">SUBTOTAL:</h6>
     <span class="cart-subtotal fw-medium">${(setsubtotRef?.current*1).toFixed(2)}</span>
   </div>
-  <a href="https://wet-love.com/cart" class="btn btn-light mt-3 d-block">View Cart</a>
-  <a href="https://wet-love.com/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
+  <a href="https://kitchen-glow.com/cart" class="btn btn-light mt-3 d-block">View Cart</a>
+  <a href="https://kitchen-glow.com/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
 </div>
 </div>
   <div class="mb-5 pb-xl-5"></div>

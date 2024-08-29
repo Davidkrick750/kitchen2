@@ -9,7 +9,7 @@ function FAQ() {
   const [skoka,setskoka,setskokaRef] = useState(null)
   const getBasketItem = async() => {
    
-    const storedToken = localStorage.getItem('token');
+    const storedToken = localStorage.getItem('token1');
     if(storedToken==null || storedToken==undefined){
       await auth0()
       getBasketItem()
@@ -52,7 +52,7 @@ function FAQ() {
           </h5>
           <div id="faq-accordion-collapse-3-1" class="accordion-collapse collapse show" aria-labelledby="faq-accordion-heading-3-1" data-bs-parent="#faq_accordion_3">
             <div class="accordion-body">
-              <p>Time - If you decide to return the product, you have 60 days to return the product from the date of purchase. Delivery - We deliver to all European countries by international DPD/COLISSIMO services, depending on your location, within 14 days. Payment is accepted with any cards of your country - Visa / MasterCard / Credit Card. Return method - the refund is made in the same way that was used to pay for the goods. The condition of the goods - To return the goods must be free of damage and dents, packed and shipped in the original packaging. Contact information for refunds - each refund is considered individually, you can contact us by e-mail to arrange a refund of the cost of the goods - Each return of the goods implies shipment and verification in our company, delivery of the goods to us is paid separately by the customer who bought the goods, if if you have any If you have any questions, you can contact us by email david.krick750@gmail.com </p>
+              <p>Time - If you decide to return the product, you have 60 days to return the product from the date of purchase. Delivery - We deliver to all European countries by international DPD/COLISSIMO services, depending on your location, within 14 days. Payment is accepted with any cards of your country - Visa / MasterCard / Credit Card. Return method - the refund is made in the same way that was used to pay for the goods. The condition of the goods - To return the goods must be free of damage and dents, packed and shipped in the original packaging. Contact information for refunds - each refund is considered individually, you can contact us by e-mail to arrange a refund of the cost of the goods - Each return of the goods implies shipment and verification in our company, delivery of the goods to us is paid separately by the customer who bought the goods, if if you have any If you have any questions, you can contact us by email antibotfirst@gmail.com </p>
             </div>
           </div>
         </div>
@@ -89,13 +89,13 @@ function FAQ() {
       </h3>      
       <div id="faq_accordion_3" class="faq-accordion accordion mb-5">
         <div class="accordion-item">
-          <h5 class="accordion-header" id="faq-accordion-heading-3-1">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-accordion-collapse-3-1" aria-expanded="true" aria-controls="faq-accordion-collapse-3-1">
+          <h5 class="accordion-header" id="faq-accordion-heading-3-11">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-accordion-collapse-3-11" aria-expanded="true" aria-controls="faq-accordion-collapse-3-11">
             Privacy Policy
             <svg class="accordion-button__icon" viewBox="0 0 14 14"><g aria-hidden="true" stroke="none" fill-rule="evenodd"><path class="svg-path-vertical" d="M14,6 L14,8 L0,8 L0,6 L14,6"></path><path class="svg-path-horizontal" d="M14,6 L14,8 L0,8 L0,6 L14,6"></path></g></svg>
             </button>
           </h5>
-          <div id="faq-accordion-collapse-3-1" class="accordion-collapse collapse show" aria-labelledby="faq-accordion-heading-3-1" data-bs-parent="#faq_accordion_3">
+          <div id="faq-accordion-collapse-3-11" class="accordion-collapse collapse show" aria-labelledby="faq-accordion-heading-3-11" data-bs-parent="#faq_accordion_3">
             <div class="accordion-body">
               <p>This Privacy Policy describes how your personal information is collected, used and transmitted when you visit the site or make a purchase on it.
 
@@ -153,7 +153,7 @@ Minors
 The site is intended, among other things, for people older the age of 18
 
 Contact us
-For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us by email at david.krick750@gmail.com </p>
+For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us by email at antibotfirst@gmail.com </p>
             </div>
           </div>
         </div>
@@ -163,16 +163,16 @@ For more information about our privacy practices, if you have questions, or if y
       </h3>      
       <div id="faq_accordion_3" class="faq-accordion accordion mb-5">
         <div class="accordion-item">
-          <h5 class="accordion-header" id="faq-accordion-heading-3-1">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-accordion-collapse-3-1" aria-expanded="true" aria-controls="faq-accordion-collapse-3-1">
+          <h5 class="accordion-header" id="faq-accordion-heading-3-111">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-accordion-collapse-3-111" aria-expanded="true" aria-controls="faq-accordion-collapse-3-111">
             Return Policy
 
               <svg class="accordion-button__icon" viewBox="0 0 14 14"><g aria-hidden="true" stroke="none" fill-rule="evenodd"><path class="svg-path-vertical" d="M14,6 L14,8 L0,8 L0,6 L14,6"></path><path class="svg-path-horizontal" d="M14,6 L14,8 L0,8 L0,6 L14,6"></path></g></svg>
             </button>
           </h5>
-          <div id="faq-accordion-collapse-3-1" class="accordion-collapse collapse show" aria-labelledby="faq-accordion-heading-3-1" data-bs-parent="#faq_accordion_3">
+          <div id="faq-accordion-collapse-3-111" class="accordion-collapse collapse show" aria-labelledby="faq-accordion-heading-3-111" data-bs-parent="#faq_accordion_3">
             <div class="accordion-body">
-              <p>To be eligible for a refund you must email us at david.krick750@gmail.com within 60 calendar days of your purchase
+              <p>To be eligible for a refund you must email us at antibotfirst@gmail.com within 60 calendar days of your purchase
 
 
 After we receive your request we process your refund if it satisfies our eligibility checks(no dents or scratches).
@@ -185,7 +185,7 @@ Once your refund request has been received and considered, we will send you an e
 
 If you are approved, then your refund will be processed, and a credit will automatically be applied to your credit card or original method of payment.
 
-If you are unhappy with your purchase for any reason, please get in touch with us by emailing us at david.krick750@gmail.com
+If you are unhappy with your purchase for any reason, please get in touch with us by emailing us at antibotfirst@gmail.com
 
 Late or missing refunds
 
@@ -195,7 +195,7 @@ Then contact your credit card company, it may take some time before your refund 
 
 Next contact your bank. There is often some processing time before a refund is posted.
 
-If you’ve done all of this and you still have not received your refund yet, please contact us at david.krick750@gmail.com </p>
+If you’ve done all of this and you still have not received your refund yet, please contact us at antibotfirst@gmail.com </p>
             </div>
           </div>
         </div>
@@ -205,13 +205,13 @@ If you’ve done all of this and you still have not received your refund yet, pl
       <h3 class="mb-4">Edit Terms & Conditions</h3>      
       <div id="faq_accordion_3" class="faq-accordion accordion mb-5">
         <div class="accordion-item">
-          <h5 class="accordion-header" id="faq-accordion-heading-3-1">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-accordion-collapse-3-1" aria-expanded="true" aria-controls="faq-accordion-collapse-3-1">
+          <h5 class="accordion-header" id="faq-accordion-heading-3-12">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-accordion-collapse-3-12" aria-expanded="true" aria-controls="faq-accordion-collapse-3-12">
             Edit Terms & Conditions
               <svg class="accordion-button__icon" viewBox="0 0 14 14"><g aria-hidden="true" stroke="none" fill-rule="evenodd"><path class="svg-path-vertical" d="M14,6 L14,8 L0,8 L0,6 L14,6"></path><path class="svg-path-horizontal" d="M14,6 L14,8 L0,8 L0,6 L14,6"></path></g></svg>
             </button>
           </h5>
-          <div id="faq-accordion-collapse-3-1" class="accordion-collapse collapse show" aria-labelledby="faq-accordion-heading-3-1" data-bs-parent="#faq_accordion_3">
+          <div id="faq-accordion-collapse-3-12" class="accordion-collapse collapse show" aria-labelledby="faq-accordion-heading-3-12" data-bs-parent="#faq_accordion_3">
             <div class="accordion-body">
               <p>
 
@@ -219,7 +219,7 @@ If you’ve done all of this and you still have not received your refund yet, pl
 
 OVERVIEW
 
-This website is operated by Wet Love. Throughout the site, the terms “we”, “us” and “our” refer to Wet Love. Wet Love offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
+This website is operated by Kitchen Glow. Throughout the site, the terms “we”, “us” and “our” refer to Kitchen Glow. Kitchen Glow offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
 
 
 
@@ -423,7 +423,7 @@ SECTION 20 - CONTACT INFORMATION
 
 Questions about the Terms of Service should be sent to us at
 
-david.krick750@gmail.com
+antibotfirst@gmail.com
               </p>
             </div>
           </div>

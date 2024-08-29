@@ -12,7 +12,7 @@ function FAQ() {
   const [skoka,setskoka,setskokaRef] = useState(null)
   const getBasketItem = async() => {
    
-    const storedToken = localStorage.getItem('token');
+    const storedToken = localStorage.getItem('token1');
    
     if(storedToken==null || storedToken==undefined){
       await auth0()
@@ -44,19 +44,20 @@ function FAQ() {
     <div class="mb-4 pb-4"></div>
     <section class="about-us container">
       <div class="mw-930">
-        <h2 class="page-title">ABOUT Wet-Love</h2>
+        <h2 class="page-title">ABOUT Kitchen-glow</h2>
       </div>
       <div class="about-us__content pb-5 mb-5">
         <p class="mb-5">
-          <img loading="lazy" class="w-100 h-auto d-block" src={photo8} width="1410" height="550" alt=""/>
+          <img loading="lazy" class="w-100 h-auto d-block" src='https://www.smeg.com/binaries/content/gallery/smeg/highlights/tsf02pguk.jpg/tsf02pguk.jpg/brx%3ApostcardDeskLarge' width="1410" height="550" alt=""/>
         </p>
         <div class="mw-930">
           <h3 class="mb-4">OUR STORY</h3>
-          <p class="fs-6 fw-medium mb-4">We have been developing and producing wonderful sex toys that have been bringing people to a state of euphoria for 10 years. Once upon a time, on the outskirts of Hungary, a small sex toy store was very much liked by the locals and then we decided to expand, realizing the importance of our mission - to bring love into this world, strengthening your families.
+          <p class="fs-6 fw-medium mb-4">We sell products from various companies and specialize in home appliances. Designer things for home and comfort. In our product catalog you can find products for cooking various dishes, coffee, drinks.
+
           </p>
-          <p class="mb-4">We love you and your partners, so we do our job efficiently, taking into account your taste preferences. Thank you for staying with us)
+          <p class="mb-4">Designed by the architect Guido Canali, the headquarters earned him the Honourable Mention in the “medaglia d’Oro all’Architettura Italiana” (Italian Architecture Gold Medal) Award at the Milan Triennale in 2006. The project was presented at the 13th International Architecture Exhibition - Venice Biennale in 2012 inside the Italian Pavilion, as an architectural example of excellence Made in Italy for a facility that heeds the poetry of its surroundings, people’s lives, and environmental sustainability.
           </p>
-          <div class="row mb-3">
+          {/* <div class="row mb-3">
             <div class="col-md-6">
               <h5 class="mb-3">Our Mission</h5>
               <p class="mb-3">Our mission is to please as many people as possible
@@ -67,15 +68,16 @@ function FAQ() {
               <p class="mb-3">We see the world of sex toys as a whole world for creativity and your pleasure
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
         <div class="mw-930 d-lg-flex align-items-lg-center">
           <div class="image-wrapper col-lg-6">
-            <img class="h-auto" loading="lazy" src={photo7} width="450" height="500" alt=""/>
+            <img class="h-auto" loading="lazy" src='https://images.unsplash.com/photo-1520930528075-4ea5ead759f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&h=1600&q=50' width="450" height="500" alt=""/>
           </div>
           <div class="content-wrapper col-lg-6 px-lg-4">
-            <h5 class="mb-3">The Toys</h5>
-            <p>Article 1301. Liability for violation of the exclusive right to the work. In cases of violation of the exclusive right to a work, the author or other rightholder, along with the use of other applicable methods of protection and liability measures established by the Civil Code of the Russian Federation (Articles 1250, 1252 and 1253), has the right, in accordance with paragraph 3 of Article 1252 of the Civil Code of the Russian Federation, to demand, at his choice, compensation from the violator instead of damages in the amount of ten thousand rubles to five million rubles.            .</p>
+            <h5 class="mb-3">A little bit about the products
+            </h5>
+            <p>Smeg has 5 production plants in Italy. Their certified laboratories, thanks to their in-depth knowledge of materials and to state-of-the-art technology, interpret the needs of contemporary living, expressing essential qualities in the products, including durability, safety, flexible use, energy efficiency and enjoyability.</p>
           </div>
         </div>
       </div>

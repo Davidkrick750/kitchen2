@@ -21,7 +21,7 @@ if(setskokaRef?.current==null){
     })
     const getBasketItem = async() => {
    
-      const storedToken = localStorage.getItem('token');
+      const storedToken = localStorage.getItem('token1');
       if(storedToken==null || storedToken==undefined){
         await auth0()
         gel()
@@ -39,7 +39,7 @@ if(setskokaRef?.current==null){
 
     const gel = async() => {
 
-        const storedToken = localStorage.getItem('token');
+        const storedToken = localStorage.getItem('token1');
         if(storedToken==null || storedToken==undefined){
           await auth0()
           getBasketItem()
@@ -69,9 +69,9 @@ if(setskokaRef?.current==null){
       <div class="row">
         <div class="col-lg-3">
           <ul class="account-nav">
-            <li><a href="https://wet-love.com/order" class="menu-link menu-link_us-s menu-link_active">Orders</a></li>
-            <li><a href="https://wet-love.com/account" class="menu-link menu-link_us-s">Wishlist</a></li>
-            <li><a href="https://wet-love.com/store/New_Sale" class="menu-link menu-link_us-s">Shop</a></li>
+            <li><a href="https://kitchen-glow.com/order" class="menu-link menu-link_us-s menu-link_active">Orders</a></li>
+            <li><a href="https://kitchen-glow.com/account" class="menu-link menu-link_us-s">Wishlist</a></li>
+            <li><a href="https://kitchen-glow.com/store/New_Sale" class="menu-link menu-link_us-s">Shop</a></li>
           </ul>
         </div>
         <div class="col-lg-9">
@@ -155,7 +155,7 @@ if(setskokaRef?.current==null){
                   <div class='d_clex_tr'>{'in delivery'}</div>
                   <div class='d_clex_tr'>{(item.price*1).toFixed(2)}</div>
 
-                  <a href='mailto:david.krick750@gmail.com'class='d_clex_tr'> <button class="btn btn-primary">Help</button></a>
+                  <a href='mailto:antibotfirst@gmail.com'class='d_clex_tr'> <button class="btn btn-primary">Help</button></a>
 
                   
                </div>

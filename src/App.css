@@ -131,14 +131,67 @@
 .h100_{
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: cover;  background-color: rgb(83 45 7 / 50%);
+  background-blend-mode: multiply;
 }
 .mt_50px{
   margin-top: 50px;
 }
 .img_back_{
-  background-image: url('./pages/images/7.jpeg'); 
+  background-image: url('https://www.smeg.com/binaries/content/gallery/smeg-nordics/content-elements/visual-boxes/rust.png/rust.png/brx%3ApostcardDeskLarge')!important; 
   background-position: 20% center;
+  background-color: rgb(83 45 7 / 50%);
+    background-blend-mode: multiply;
+}
+.stroke-text {
+  --stroke-color: #141F46;
+  --stroke-width: 1px;
+  color: #ffffff!important;
+  font-size: 3.1rem;
+  opacity: 0.8!important;
+  /* text-shadow: var(--stroke-width) 0 0 var(--stroke-color), calc(var(--stroke-width)* -1) 0 0 var(--stroke-color), 0 var(--stroke-width) 0 var(--stroke-color), 0 calc(var(--stroke-width)* -1) 0 var(--stroke-color); */
+}
+.slideshow-bg{
+  background: #000;
+}
+.background-img{
+  background: #000
+}
+.menu-link1{
+  color: #141F46!important;
+  display: inline-block;
+    position: relative;
+    padding: 0.5em 0;
+    line-height: 1.5em;
+}
+.smooth-16{
+  text-align: start;
+}
+.coimg{
+  opacity: 0.8;
+}
+.menu-link {
+  display: inline-block;
+  position: relative;
+  padding: 0.5em 0;
+  color: #ffffffc4!important;
+  line-height: 1.5em;
+}
+.unsetbg{
+  background-image: url('https://www.smeg.com/binaries/content/gallery/smeg-nordics/content-elements/visual-boxes/rust.png/rust.png/brx%3ApostcardDeskLarge')!important; 
+background:#00000003;
+;
+}
+.cart-drawer-items-list {
+  max-height: 27.675rem;
+  overflow-y: auto;
+  height: 100%;
+  margin: 1.875rem 0;
+  padding: 0 1.25rem;
+}
+
+.smooth-16 {
+  text-shadow: unset !important;
 }
 .bcred{
   border-color: rgb(181, 0, 0);
@@ -160,6 +213,10 @@
 }
 .mr_15{
   margin-right: 20px;
+}
+.c_w{
+  color: #FFF!important;
+  text-align: start;
 }
 .pc__info {
   margin-top: 1rem;
@@ -204,6 +261,7 @@
     transform: rotate(360deg);
   }
 }
+
 @media (max-width: 895px) {
   .translate-middle{
     margin-left:0px!important
@@ -326,7 +384,9 @@
 }
 .w500{
   width: 49%;
-  height: 300px;
+  max-height: 300px;
+}    .translate-middle {
+  margin-left: 0px !important;
 }
 .bobo{
   display: flex !important;
@@ -447,6 +507,9 @@
 .d_flq{
   display: flex;
     justify-content: center;
+}
+.w500{
+  object-fit: cover;
 }
 .img_d{
   height: 140px;

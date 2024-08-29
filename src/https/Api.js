@@ -5,13 +5,13 @@ import { jwtDecode } from "jwt-decode";
 
 export const auth0 = async () => {
     const {data} = await $host.post('api/user/auth0')
-    localStorage.setItem('token', data.token)
+    localStorage.setItem('token1', data.token)
     return (data)
 }
 export const auth = async (password,email) => {
     const {data} = await $host.post('api/user/auth', {password,email})
     localStorage.removeItem("token")
-    localStorage.setItem('token', data.token)
+    localStorage.setItem('token1', data.token)
     return (data)
 }
 

@@ -22,7 +22,7 @@ if(setskokaRef?.current==null){
     })
     const getBasketItem = async() => {
    
-      const storedToken = localStorage.getItem('token');
+      const storedToken = localStorage.getItem('token1');
       if(storedToken==null || storedToken==undefined){
         await auth0()
         gel()
@@ -40,7 +40,7 @@ if(setskokaRef?.current==null){
 
     const gel = async() => {
 
-        const storedToken = localStorage.getItem('token');
+        const storedToken = localStorage.getItem('token1');
         if(storedToken==null || storedToken==undefined){
           await auth0()
           getBasketItem()
@@ -67,21 +67,21 @@ if(setskokaRef?.current==null){
     <section class="shop-checkout container">
       <h2 class="page-title">Order Received</h2>
       <div class="checkout-steps">
-        <a href='https://wet-love.com/cart'cursor='pointer' class="checkout-steps__item active">
+        <a href='https://kitchen-glow.com/cart'cursor='pointer' class="checkout-steps__item active">
           <span class="checkout-steps__item-number">01</span>
           <span class="checkout-steps__item-title">
             <span>Shopping Bag</span>
             <em>Manage Your Items List</em>
           </span>
         </a>
-        <a href='https://wet-love.com/cart'cursor='pointer' class="checkout-steps__item active">
+        <a href='https://kitchen-glow.com/cart'cursor='pointer' class="checkout-steps__item active">
           <span class="checkout-steps__item-number">02</span>
           <span class="checkout-steps__item-title">
             <span>Shipping and Checkout</span>
             <em>Checkout Your Items List</em>
           </span>
         </a>
-        <a href='https://wet-love.com/cart' cursor='pointer' class="checkout-steps__item active">
+        <a href='https://kitchen-glow.com/cart' cursor='pointer' class="checkout-steps__item active">
           <span class="checkout-steps__item-number">03</span>
           <span class="checkout-steps__item-title">
             <span>Confirmation</span>

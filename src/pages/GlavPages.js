@@ -17,6 +17,7 @@ import NavBar from '../NavBar';
 
 import $ from 'jquery'
 function GlavPages() {
+  const [safari,setsafari,setsafariRef] = useState(false)
 
   const [categoria1,setcategoria1,setcategoria1Ref] = useState(null)
 
@@ -66,7 +67,7 @@ function GlavPages() {
 
     const getBasketItem = async() => {
    
-        const storedToken = localStorage.getItem('token');
+        const storedToken = localStorage.getItem('token1');
         if(storedToken==null || storedToken==undefined){
           await auth0()
           getBasketItem()
@@ -135,7 +136,16 @@ function GlavPages() {
         $('.aside').removeClass('aside_visible')
         $('body').removeClass('overflow-hidden')
         }
-
+        function detectBrowser() {
+          const userAgent = navigator.userAgent.toLowerCase();
+          console.log(userAgent.indexOf('safari'))
+          console.log(userAgent.indexOf('chrome')) 
+    if(userAgent.indexOf('safari')==-1){
+      setsafari(true)
+    }
+      }
+       
+      console.log(detectBrowser())
   return (
     <div className="App">
 
@@ -164,80 +174,103 @@ function GlavPages() {
     <span class="visually-hidden">Следующий</span>
   </button>
 </div> */}
-    <section class="swiper-container js-swiper-slider slideshow full-width_padding-20 slideshow-md"
-      data-settings='{
-        "autoplay": {
-          "delay": 5000
-        },
-        "slidesPerView": 1,
-        "effect": "fade",
-        "loop": true,
-        "pagination": {
-          "el": ".slideshow-pagination",
-          "type": "bullets",
-          "clickable": true
-        }
-      }'>
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="overflow-hidden position-relative h-100">
-            <div class="slideshow-bg">
-              <img class='h100_' loading="lazy" src={photo5}/>
-            </div>
-            <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-              <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">TRENDING 2024</h6>
-              <h2 class="text-uppercase h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Sex toys for you</h2>
-              <p class="animate animate_fade animate_btt animate_delay-6">We have a sale of toys to strengthen the family<br/>Love each other
-</p>
-              <a href="https://wet-love.com/store/New_Sale" class="btn-link btn-link_sm default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-7">Buy Now</a>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="overflow-hidden position-relative h-100">
-            <div class="slideshow-bg">
-            <img class='h100_' loading="lazy" src={photo6}/>
-            </div>
-            <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-              <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">TRENDING 2024</h6>
-              <h2 class="text-uppercase h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Bondage </h2>
-              <p class="animate animate_fade animate_btt animate_delay-6">Discover tie-and-tease play with our huge range of bondage gear. Whether you're a bondage beginner or a Shibari expert, we have a full range of <br/>BDSM toys and accessories, from handcuffs and restraints, to spankers, ticklers and floggers.</p>
-              <a href="https://wet-love.com/store/Bondage" class="btn-link btn-link_sm default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-7">Buy Now</a>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="overflow-hidden position-relative h-100">
-            <div class="slideshow-bg">
-            <img class='h100_' loading="lazy" src={photo7}/>
-            </div>
-            <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-              <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">TRENDING 2024</h6>
-              <h2 class="text-uppercase h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Vibrators</h2>
-              <p class="animate animate_fade animate_btt animate_delay-6">On your own or with a partner, a vibrator makes it so much easier to reach orgasm. 
-<br/>Browse our collection of best-selling sex toys for women and read customer reviews to help you pick the best women's vibrator.</p>
-              <a href="https://wet-love.com/store/Vibrators" class="btn-link btn-link_sm default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-7">Buy Now</a>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="overflow-hidden position-relative h-100">
-            <div class="slideshow-bg">
-            <img class='h100_' loading="lazy" src={photo8}/>
-            </div>
-            <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-              <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">TRENDING 2023</h6>
-              <h2 class="text-uppercase h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Discounts up to 50%</h2>
-              <p class="animate animate_fade animate_btt animate_delay-6">Discounts of up to 50% on vibrators, dildos and sex toys<br/></p>
-              <a href="https://wet-love.com/store/New_Sale" class="btn-link btn-link_sm default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-7">Buy Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="slideshow-pagination position-left-center"></div>
-      
-    </section>
+  {/* setsafariRef.current==true? */}
+  <div class="swiper-slide" style={{height:'85vh'}}>
+  <div class="overflow-hidden position-relative h-100">
+    <div class="slideshow-bg">
+      <img class='h100_ coimg' loading="lazy" src='https://www.smeg.com/binaries/content/gallery/smeg-unitedkingdom/news/snoopy/fab10urdsn3_l01-1920x960-snoopy.jpg/fab10urdsn3_l01-1920x960-snoopy.jpg/brx%3ArectangulardeskLarge'/>
+    </div>
+    <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
+      <h6 class="text_dash c_w text-uppercase fs-base fw-medium animate  animate_btt animate_delay-3">TRENDING 2024</h6>
+      <h2 class="text-uppercase c_w h1 fw-normal mb-0 animate  animate_btt animate_delay-5">Smeg Sale</h2>
+      <p class="animate c_w  animate_btt animate_delay-6">Take a look at the -50% Off Kettles & Toasters sections, they will delight you with good discounts.
+
+<br/>We arrange a tale of up to -50% of the coast
+of products of different categories and colors
+</p>
+      <a href="https://kitchen-glow.com/store/New_Sale" class="btn-link btn-link_sm default-underline text-uppercase fw-medium animate  animate_btt animate_delay-7 c_w">Buy Now</a>
+    </div>
+  </div>
+</div>
+
+{/* <section class="swiper-container js-swiper-slider slideshow full-width_padding-20 slideshow-md"
+data-settings='{
+  "autoplay": {
+    "delay": 5000
+  },
+  "slidesPerView": 1,
+  "effect": "fade",
+  "loop": true,
+  "pagination": {
+    "el": ".slideshow-pagination",
+    "type": "bullets",
+    "clickable": true
+  }
+}'>
+<div class="swiper-wrapper">
+  <div class="swiper-slide">
+    <div class="overflow-hidden position-relative h-100">
+      <div class="slideshow-bg">
+        <img class='h100_' loading="lazy" src={photo5}/>
+      </div>
+      <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
+        <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">TRENDING 2024</h6>
+        <h2 class="text-uppercase h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Sex toys for you</h2>
+        <p class="animate animate_fade animate_btt animate_delay-6">We have a sale of toys to strengthen the family<br/>Love each other
+</p>
+        <a href="https://kitchen-glow.com/store/New_Sale" class="btn-link btn-link_sm default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-7">Buy Now</a>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-slide">
+    <div class="overflow-hidden position-relative h-100">
+      <div class="slideshow-bg">
+      <img class='h100_' loading="lazy" src={photo6}/>
+      </div>
+      <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
+        <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">TRENDING 2024</h6>
+        <h2 class="text-uppercase h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Bondage </h2>
+        <p class="animate animate_fade animate_btt animate_delay-6">Discover tie-and-tease play with our huge range of bondage gear. Whether you're a bondage beginner or a Shibari expert, we have a full range of <br/>BDSM toys and accessories, from handcuffs and restraints, to spankers, ticklers and floggers.</p>
+        <a href="https://kitchen-glow.com/store/Bondage" class="btn-link btn-link_sm default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-7">Buy Now</a>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-slide">
+    <div class="overflow-hidden position-relative h-100">
+      <div class="slideshow-bg">
+      <img class='h100_' loading="lazy" src={photo7}/>
+      </div>
+      <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
+        <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">TRENDING 2024</h6>
+        <h2 class="text-uppercase h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Vibrators</h2>
+        <p class="animate animate_fade animate_btt animate_delay-6">On your own or with a partner, a vibrator makes it so much easier to reach orgasm. 
+<br/>Browse our collection of best-selling sex toys for women and read customer reviews to help you pick the best women's vibrator.</p>
+        <a href="https://kitchen-glow.com/store/Vibrators" class="btn-link btn-link_sm default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-7">Buy Now</a>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-slide">
+    <div class="overflow-hidden position-relative h-100">
+      <div class="slideshow-bg">
+      <img class='h100_' loading="lazy" src={photo8}/>
+      </div>
+      <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
+        <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">TRENDING 2023</h6>
+        <h2 class="text-uppercase h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Discounts up to 50%</h2>
+        <p class="animate animate_fade animate_btt animate_delay-6">Discounts of up to 50% on vibrators, dildos and sex toys<br/></p>
+        <a href="https://kitchen-glow.com/store/New_Sale" class="btn-link btn-link_sm default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-7">Buy Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slideshow-pagination position-left-center"></div>
+
+</section> */}
+
+       
+ 
 
     <div class="mb-3 pb-1"></div>
 
@@ -418,15 +451,15 @@ function GlavPages() {
                 
                 <div class="col-md-4">
                 <div class="category-banner__item border-radius-10 mb-5">
-                  <a href={`https://wet-love.com/store/${item.name}`}>
+                  <a href={`https://kitchen-glow.com/store/${item.name}`}>
                   <img loading="lazy"  class="of_cover" src={item?.photo} width="680" height="515" alt={item.name} title={item.name}/>
                   </a>
                   <div class="category-banner__item-mark">
-                    Starting at {item.nach_price}
+                    Starting at ${item.nach_price}
                   </div>
                   <div class="category-banner__item-content">
                     <h3 class="mb-0">{item.name}</h3>
-                    <a href={`https://wet-love.com/store/${item.name}`} class="btn-link default-underline text-uppercase fw-medium">Shop Now</a>
+                    <a href={`https://kitchen-glow.com/store/${item.name}`} class="btn-link default-underline text-uppercase fw-medium">Shop Now</a>
                   </div>
                 </div>
                 <div class="pb-2"></div>
@@ -450,7 +483,7 @@ function GlavPages() {
 
        
 
-            <a href="https://wet-love.com/store/New_Sale" class="btn-link default-underline text-uppercase fw-medium mt-3">View All</a>
+            <a href="https://kitchen-glow.com/store/New_Sale" class="btn-link default-underline text-uppercase fw-medium mt-3">View All</a>
           </div>
           <div class="col-md-6 col-lg-8 col-xl-80per">
             <div class="position-relative">
@@ -611,21 +644,21 @@ setItemsSkidkaRef?.current==null?
 {setItemsSkidkaRef?.current?.map(item=>
 <div class="mr_15 swiper-slide product-card product-card_style3">
 <div class="pc__img-wrapper">
-  <a   href={`https://wet-love.com/item/${item.id}`}  >
+  <a   href={`https://kitchen-glow.com/item/${item.id}`}  >
     <img loading="lazy" title={item.name} alt={item.name}src={item.Item_photo[0]?.photo} width="258" height="313" class="pc__img"/>
     <img loading="lazy" title={item.name} alt={item.name} src={item.Item_photo[1]?.photo} width="258" height="313"  class="pc__img pc__img-second"/>
   </a>
 </div>
 
 <div class="pc__info position-relative">
-  <h6 class="pc__title"><a  >{item.name}</a></h6>
+  <h6 class="pc__title"><a href={`https://kitchen-glow.com/item/${item.id}`} >{item.name}</a></h6>
   <div class="product-card__price d-flex align-items-center">
     <span class="money price-old">${item.price}</span>
     <span class="money price text-secondary">${(item.price*((100-item.skidka)/100)).toFixed(2)}</span>
   </div>
 
   {/* <div class="anim_appear-bottom position-absolute bottom-0 start-25 d-none d-sm-flex align-items-center bg-body">
-    <a href={`https://wet-love.com/${item.id}`} class="btn-link btn-link_lg  text-uppercase fw-medium  " title="Go To Cart">Go To Cart</a>
+    <a href={`https://kitchen-glow.com/${item.id}`} class="btn-link btn-link_lg  text-uppercase fw-medium  " title="Go To Cart">Go To Cart</a>
 
 
   </div> */}
@@ -644,12 +677,15 @@ setItemsSkidkaRef?.current==null?
         </div>
       </section>
       <section class="image-banner mt_50px">
-      <div class="background-img img_back_" ></div>
+      <div class="background-img unsetbg img_back_" ></div>
       
       <div class="image-banner__content container py-3">
-        <h2 class="text-white fw-bold">Male Toys</h2>
-        <p class="text-white mb-4">New Collection Male Toys</p>
-        <a href='https://wet-love.com/store/Male_Toys' class="btn btn-outline-primary border-0 fs-base text-uppercase fw-medium btn-55 d-inline-flex align-items-center">
+        <h2 class="text-white fw-bold">Home comfort</h2>
+        <p class="text-white mb-4">We took a piece of home comfort and combined it with comfort, we got Smeg
+
+
+</p>
+        <a href='https://kitchen-glow.com/store/Male_Toys' class="btn btn-outline-primary border-0 fs-base text-uppercase fw-medium btn-55 d-inline-flex align-items-center">
           <span class="text_dash_half">Shop Now</span>
         </a>
       </div>
@@ -925,16 +961,16 @@ setonecategoriaRef?.current==null?
             <div class="col-6 col-md-4 col-lg-3">
               <div class="product-card mb-3 mb-md-4 mb-xxl-5">
                 <div class="pc__img-wrapper">
-                  <a href={`https://wet-love.com/item/${item.id}`} >
+                  <a href={`https://kitchen-glow.com/item/${item.id}`} >
                     <img loading="lazy"alt={item.name} title={item.name} src={item.Item_photo[0]?.photo} width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img"/>
                     <img loading="lazy" alt={item.name} title={item.name} src={item.Item_photo[1]?.photo} width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second"/>
                   </a>
-                  <a  href={`https://wet-love.com/item/${item.id}`} class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium" title="Add To Cart">Go To Cart</a>
+                  <a  href={`https://kitchen-glow.com/item/${item.id}`} class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium" title="Add To Cart">Go To Cart</a>
                 </div>
 
                 <div class="pc__info position-relative">
                   <p class="pc__category">{item.id%2? 'For you':'New' }</p>
-                  <h6 class="pc__title"><a  >{item.name}</a></h6>
+                  <h6 class="pc__title"><a  href={`https://kitchen-glow.com/item/${item.id}`}>{item.name}</a></h6>
                   <div class="product-card__price d-flex">
                   <span class="money price-old">${item.price}</span>
     <span class="money price text-secondary">${(item.price*((100-item.skidka)/100)).toFixed(2)}</span>
@@ -1166,7 +1202,7 @@ setonecategoriaRef?.current==null?
   setonecategoria1Ref?.current?.map(item=>
 
     <div class="instagram__tile">
-          <a href={`https://wet-love.com/item/${item.id}`} target="_blank" class="position-relative overflow-hidden d-block effect overlay-plus">
+          <a href={`https://kitchen-glow.com/item/${item.id}`} target="_blank" class="position-relative overflow-hidden d-block effect overlay-plus">
             <img loading="lazy" class="instagram__img" src={item.Item_photo[0]?.photo} width="232" height="232" alt="Insta image 20"/>
           </a>
     </div>
@@ -1227,12 +1263,12 @@ setonecategoriaRef?.current==null?
   <button onClick={closes} class="btn-close-lg js-close-aside btn-close-aside ms-auto"></button>
 </div>
 
-<div class="aside-content cart-drawer-items-list">
+<div class=" cart-drawer-items-list">
 
 
  
 {setbasketItemRef?.current?.map(item=>
-  <div >
+  <div class='cart-drawer-item '>
       <div class="cart-drawer-item d-flex position-relative">
     <div class="position-relative">
       <a >
@@ -1250,7 +1286,14 @@ setonecategoriaRef?.current==null?
           <div onClick={()=>minus(item)} class="qty-control__reduce text-start">-</div>
           <div onClick={()=>plus(item)} class="qty-control__increase text-end">+</div>
         </div>
-        <span class="money price price-old">${item.price*item.qauantity}</span><span class="cart-drawer-item__price money price">${ (item.price*item.qauantity*((100-item.skidka)/100)).toFixed(2)}</span>
+        {
+        item.skidka!=0?
+              <><span class="money price price-old">${item.price*item.qauantity}</span><span class="cart-drawer-item__price money price">${ (item.price*item.qauantity*((100-item.skidka)/100)).toFixed(2)}</span></>  
+:
+<><span class="cart-drawer-item__price money price">${ (item.price*item.qauantity*((100-item.skidka)/100)).toFixed(2)}</span></>  
+
+        }
+
       </div>
     </div>
 
@@ -1270,8 +1313,8 @@ setonecategoriaRef?.current==null?
     <h6 class="fs-base fw-medium">SUBTOTAL:</h6>
     <span class="cart-subtotal fw-medium">${(setsubtotRef?.current*1).toFixed(2)}</span>
   </div>
-  <a href="https://wet-love.com/cart" class="btn btn-light mt-3 d-block">View Cart</a>
-  <a href="https://wet-love.com/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
+  <a href="https://kitchen-glow.com/cart" class="btn btn-light mt-3 d-block">View Cart</a>
+  <a href="https://kitchen-glow.com/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
 </div>
 </div>
 

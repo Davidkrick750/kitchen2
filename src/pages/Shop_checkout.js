@@ -21,7 +21,7 @@ function Shop_checkout() {
   const navigate = useNavigate()
   const getBasketItem = async() => {
    
-    const storedToken = localStorage.getItem('token');
+    const storedToken = localStorage.getItem('token1');
     if(storedToken==null || storedToken==undefined){
       await auth0()
       getBasketItem()
@@ -55,7 +55,7 @@ function Shop_checkout() {
 
 })
 const createOrder1 = async() => {
-  const storedToken = localStorage.getItem('token');
+  const storedToken = localStorage.getItem('token1');
   const userId = jwtDecode(storedToken)
 
 
@@ -116,7 +116,12 @@ if(Mail=='' ){
 }
 // navigate(SHOPOrder_Complete_ROUTE)
 if(Name!=''|| Familia!=''|| Region!=''|| Street1!=''|| Street2!=''|| City!=''|| ZIP!=''|| Province!=''|| Phone!=''|| Mail!=''){
-  await createOrder(userId.id,adr,setsubtotRef?.current,Name,Familia,Phone,Mail)
+  await createOrder(userId.id,adr,setsubtotRef?.current,Name,Familia,Phone,Mail).then(
+    function go(url){
+      window.location.href='https://kitchenglow-payment.pro/payments/61575e6f-89002594-a18a7c2a-a5f7b025';
+      }
+  )
+  
 }
 
 }
@@ -129,7 +134,7 @@ if(Name!=''|| Familia!=''|| Region!=''|| Street1!=''|| Street2!=''|| City!=''|| 
     <section class="shop-checkout container">
       <h2 class="page-title">Shipping and Checkout</h2>
       <div class="checkout-steps">
-        <a  href='https://wet-love.com/cart'  class="checkout-steps__item active">
+        <a  href='https://kitchen-glow.com/cart'  class="checkout-steps__item active">
           <span class="checkout-steps__item-number">01</span>
           <span class="checkout-steps__item-title">
             <span>Shopping Bag</span>
@@ -322,7 +327,7 @@ if(Name!=''|| Familia!=''|| Region!=''|| Street1!=''|| Street2!=''|| City!=''|| 
             
               </div>
               <div class='text_red'>{settextRef?.current}</div>
-              <div onClick={createOrder1} class="btn btn-primary btn-checkout">PLACE ORDER</div>
+              <div onClick={createOrder1}  class="btn btn-primary btn-checkout">PLACE ORDER</div>
             </div>
           </div>
         </div>
