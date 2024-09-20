@@ -1097,7 +1097,6 @@ function pureFadeOut(e) {
       new UomoSections.Header();
       new UomoSections.Footer();
       new UomoSections.CustomerSideForm();
-      new UomoSections.CartDrawer();
       new UomoSections.SwiperSlideshow();
       new UomoSections.ProductSingleMedia();
     }
@@ -1277,19 +1276,8 @@ function pureFadeOut(e) {
     window.location.href='./shop_order_complete.html';
   });
 
-  $(document).on('click', '.cart-table .remove-cart', function(e) {
-    e.preventDefault();
 
-    let parentEl = $(this).closest('tr');
-    $(parentEl).addClass('_removed');
-    setTimeout(() => {
-      $(parentEl).remove();
-    }, 350);
-  });
 
-  document.querySelector('.js-show-register').addEventListener('click', function(e) {
-    document.querySelector(this.getAttribute("href")).click();
-  });
 
   $(document).on('click', 'button.js-add-wishlist, a.add-to-wishlist', function() {
     if($(this).hasClass("active"))

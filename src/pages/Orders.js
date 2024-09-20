@@ -21,7 +21,7 @@ if(setskokaRef?.current==null){
     })
     const getBasketItem = async() => {
    
-      const storedToken = localStorage.getItem('token1');
+      const storedToken = localStorage.getItem('token2');
       if(storedToken==null || storedToken==undefined){
         await auth0()
         gel()
@@ -39,7 +39,7 @@ if(setskokaRef?.current==null){
 
     const gel = async() => {
 
-        const storedToken = localStorage.getItem('token1');
+        const storedToken = localStorage.getItem('token2');
         if(storedToken==null || storedToken==undefined){
           await auth0()
           getBasketItem()
@@ -69,9 +69,9 @@ if(setskokaRef?.current==null){
       <div class="row">
         <div class="col-lg-3">
           <ul class="account-nav">
-            <li><a href="https://kitchen-glow.com/order" class="menu-link menu-link_us-s menu-link_active">Orders</a></li>
-            <li><a href="https://kitchen-glow.com/account" class="menu-link menu-link_us-s">Wishlist</a></li>
-            <li><a href="https://kitchen-glow.com/store/New_Sale" class="menu-link menu-link_us-s">Shop</a></li>
+            <li><a href="http://localhost:3000/order" class="menu-link menu-link_us-s menu-link_active">Orders</a></li>
+            <li><a href="http://localhost:3000/account" class="menu-link menu-link_us-s">Wishlist</a></li>
+            <li><a href="http://localhost:3000/store/New_Sale" class="menu-link menu-link_us-s">Shop</a></li>
           </ul>
         </div>
         <div class="col-lg-9">

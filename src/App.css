@@ -174,7 +174,7 @@
   display: inline-block;
   position: relative;
   padding: 0.5em 0;
-  color: #ffffffc4!important;
+  color: #fffffff8!important;
   line-height: 1.5em;
 }
 .unsetbg{
@@ -183,13 +183,22 @@ background:#00000003;
 ;
 }
 .cart-drawer-items-list {
-  max-height: 27.675rem;
+  max-height: auto!important;
   overflow-y: auto;
   height: 100%;
   margin: 1.875rem 0;
   padding: 0 1.25rem;
 }
-
+.dpfd{
+  cursor: pointer;
+    font-size: 21px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+}
+.cart-drawer-items-list{
+  max-height: auto!important;
+}
 .smooth-16 {
   text-shadow: unset !important;
 }

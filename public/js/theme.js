@@ -1401,15 +1401,15 @@ function pureFadeOut(e) {
     window.location.href='./shop_order_complete.html';
   });
 
-  $(document).on('click', '.cart-table .remove-cart', function(e) {
-    e.preventDefault();
+  // $(document).on('click', '.cart-table .', function(e) {
+  //   e.preventDefault();
 
-    let parentEl = $(this).closest('tr');
-    $(parentEl).addClass('_removed');
-    setTimeout(() => {
-      $(parentEl).remove();
-    }, 350);
-  });
+  //   let parentEl = $(this).closest('tr');
+  //   $(parentEl).addClass('_removed');
+  //   setTimeout(() => {
+  //     $(parentEl).remove();
+  //   }, 350);
+  // });
 
 
 

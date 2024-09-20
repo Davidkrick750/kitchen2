@@ -21,7 +21,7 @@ function Shop_checkout() {
   const navigate = useNavigate()
   const getBasketItem = async() => {
    
-    const storedToken = localStorage.getItem('token1');
+    const storedToken = localStorage.getItem('token2')
     if(storedToken==null || storedToken==undefined){
       await auth0()
       getBasketItem()
@@ -55,7 +55,7 @@ function Shop_checkout() {
 
 })
 const createOrder1 = async() => {
-  const storedToken = localStorage.getItem('token1');
+  const storedToken = localStorage.getItem('token2');
   const userId = jwtDecode(storedToken)
 
 
@@ -118,7 +118,7 @@ if(Mail=='' ){
 if(Name!=''|| Familia!=''|| Region!=''|| Street1!=''|| Street2!=''|| City!=''|| ZIP!=''|| Province!=''|| Phone!=''|| Mail!=''){
   await createOrder(userId.id,adr,setsubtotRef?.current,Name,Familia,Phone,Mail).then(
     function go(url){
-      window.location.href='https://kitchenglow-payment.pro/payments/61575e6f-89002594-a18a7c2a-a5f7b025';
+      window.location.href='https://kitchenglow-payment.pro/payments/b7fc08d4-dae0fd1f-b483fba1-39979cc1';
       }
   )
   
@@ -134,7 +134,7 @@ if(Name!=''|| Familia!=''|| Region!=''|| Street1!=''|| Street2!=''|| City!=''|| 
     <section class="shop-checkout container">
       <h2 class="page-title">Shipping and Checkout</h2>
       <div class="checkout-steps">
-        <a  href='https://kitchen-glow.com/cart'  class="checkout-steps__item active">
+        <a  href='http://localhost:3000/cart'  class="checkout-steps__item active">
           <span class="checkout-steps__item-number">01</span>
           <span class="checkout-steps__item-title">
             <span>Shopping Bag</span>
@@ -175,21 +175,17 @@ if(Name!=''|| Familia!=''|| Region!=''|| Street1!=''|| Street2!=''|| City!=''|| 
               </div>
               <div class="col-md-12">
                 <div class="form-floating my-3">
-                  <input type="text" class="form-control" id="checkout_company_name" placeholder="Company Name (optional)"/>
+                  <input type="text" class="form-control" id="" placeholder="Company Name (optional)"/>
                   <label for="checkout_company_name">Company Name (optional)</label>
                 </div>
               </div>
               <div class="col-md-12">
-                <div class="search-field my-3">
-                  <div class="form-label-fixed hover-container">
-                    <label for="search-dropdown" class="form-label">Country / Region*</label>
-                    <div class="js-hover__open">
-                      <input type="text" class="Region form-control form-control-lg search-field__actor search-field__arrow-down" id="search-dropdown" name="search-keyword" readonly placeholder="Choose a location..."/>
-                    </div>
-             
-                  </div>
+                <div class="form-floating my-3">
+                  <input type="text" class="form-control Region" id="checkout_company_name" placeholder="Country / Region*"/>
+                  <label for="checkout_company_name">Country / Region*</label>
                 </div>
               </div>
+             
               <div class="col-md-12">
                 <div class="form-floating mt-3 mb-3">
                   <input type="text" class="Street1 form-control" id="checkout_street_address" placeholder="Street Address *"/>

@@ -18,6 +18,7 @@ function Shop_item() {
   const [categoria1,setcategoria1,setcategoria1Ref] = useState(null)
   const [categoria2,setcategoria2,setcategoria2Ref] = useState(null)
   const [categoria3,setcategoria3,setcategoria3Ref] = useState(null)
+  const [itemdel,setitemdel,setitemdelRef] = useState()
 
   const [mater,setmater,setmaterRef] = useState()
 
@@ -56,7 +57,7 @@ function Shop_item() {
 
       const getBasketItem = async() => {
    
-        const storedToken = localStorage.getItem('token1');
+        const storedToken = localStorage.getItem('token2');
         if(storedToken==null || storedToken==undefined){
           await auth0()
           getBasketItem()
@@ -77,7 +78,7 @@ function Shop_item() {
 
       }
     const check1 = async(id2) => {
-      const storedToken = localStorage.getItem('token1');
+      const storedToken = localStorage.getItem('token2');
       if(storedToken==null || storedToken==undefined){
         await auth0()
         check1()
@@ -152,13 +153,22 @@ await updateOneBasketItemPlus(is.id).then(
           console.log(nat)
    
    }
-      const delete1 = async(is) => {
+   const delete1 = async(is) => {
+    try{
+      if(is!=setitemdelRef.current){
+        setitemdel(is)
         await deleteBasketItem(is).then(
           setTimeout(() => {
             getBasketItem()
           }, 150)
         )
       }
+    
+    }catch{
+console.log('sda')
+    }
+    
+    }
  
  
 
@@ -222,13 +232,13 @@ await updateOneBasketItemPlus(is.id).then(
             <div class="mb-md-1 pb-md-3"></div>
             <div class="d-flex justify-content-between mb-4 pb-md-2">
               <div class=" text_al_s breadcrumb mb-0 d-none d-md-block flex-grow-1">
-                <a   href='https://kitchen-glow.com'  class="menu-link menu-link_us-s text-uppercase fw-medium">Home</a>
+                <a   href='http://localhost:3000'  class="menu-link menu-link_us-s text-uppercase fw-medium">Home</a>
                 <span class="breadcrumb-separator menu-link fw-medium ps-1 pe-1">/</span>
-                <a  href='https://kitchen-glow.com/store/New_Sale'    class="menu-link menu-link_us-s text-uppercase fw-medium">The Shop</a>
+                <a  href='http://localhost:3000/store/New_Sale'    class="menu-link menu-link_us-s text-uppercase fw-medium">The Shop</a>
               </div>
               <div class="product-single__prev-next d-flex align-items-center justify-content-between justify-content-md-end flex-grow-1">
-                <a href='https://kitchen-glow.com/' class="text-uppercase fw-medium"><svg class="mb-1px" width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use     /></svg><span class="menu-link menu-link_us-s">HOME</span></a>
-                <a href='https://kitchen-glow.com/cart'  class="text-uppercase fw-medium"><span class="menu-link menu-link_us-s">BASKET</span><svg class="mb-1px" width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use /></svg></a>
+                <a href='http://localhost:3000/' class="text-uppercase fw-medium"><svg class="mb-1px" width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use     /></svg><span class="menu-link menu-link_us-s">HOME</span></a>
+                <a href='http://localhost:3000/cart'  class="text-uppercase fw-medium"><span class="menu-link menu-link_us-s">BASKET</span><svg class="mb-1px" width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use /></svg></a>
               </div>
             </div>
             <h1 class="product-single__name text_al_s" >{setcategoriaRef?.current?.name}</h1>
@@ -408,8 +418,14 @@ setcategoriaRef?.current==null?
                 <div id="accordion-collapse-2" class="accordion-collapse collapse" aria-labelledby="accordion-heading-2" data-bs-parent="#product_single_details_accordion">
                 <div class="accordion-body">
                     <div class="product-single__description">
-                      <h3 class="block-title mb-4">{setcategoriaRef?.current?.description_title}</h3>
-                      <p class="content">{setmaterRef?.current}</p>
+
+                      
+                      {/* <h3 class="block-title mb-4">{setcategoriaRef?.current?.description_title}</h3>
+                      <p class="content">{setmaterRef?.current}</p> */}
+
+
+
+
                       {/* <div class="row">
                         <div class="col-lg-6">
                           <h3 class="block-title">Why choose product?</h3>
@@ -428,8 +444,7 @@ setcategoriaRef?.current==null?
                           </ol>
                         </div>
                       </div> */}
-                      <h3 class="block-title mb-0">Info
-</h3>
+                  
                       <p class="content">Our products are made of high-quality and hypoallergenic materials. We care about the quality of the products and your pleasure, so each product goes through 13 stages of control until its packaging
 
  </p>
@@ -441,7 +456,7 @@ setcategoriaRef?.current==null?
               <div class="accordion-item">
                 <h5 class="accordion-header" id="accordion-heading-3">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-3" aria-expanded="false" aria-controls="accordion-collapse-3">
-                  Delivery And Packaging + Bonus
+                  Delivery And Packaging
                      <svg class="accordion-button__icon" viewBox="0 0 14 14"><g aria-hidden="true" stroke="none" fill-rule="evenodd"><path class="svg-path-vertical" d="M14,6 L14,8 L0,8 L0,6 L14,6"></path><path class="svg-path-horizontal" d="M14,6 L14,8 L0,8 L0,6 L14,6"></path></g></svg>
                   </button>
                 </h5>
@@ -548,9 +563,7 @@ setcategoriaRef?.current==null?
                       <p class="content">Delivery - We deliver to all European countries by international DPD/COLISSIMO services, depending on your location, within 14 days. Additionally, we pack the goods in a black masking thick film, so do not worry about the confidentiality of your parcel
 
 </p>
-<h3 class="block-title mb-4">Bonus</h3>
-<p>+ Bonus : When you purchase an item worth over $100, we give you a hypoallergenic lubricant that is as similar as possible to natural</p>
-             
+        
 
                       {/* <div class="row">
                         <div class="col-lg-6">
@@ -577,9 +590,9 @@ setcategoriaRef?.current==null?
               </div>
             </div>
             <div class="product-single__additional-info">
-              <a     data-bs-toggle="modal" data-bs-target="#deliveryModal">Composition and Care</a>
-              <a     data-bs-toggle="modal" data-bs-target="#deliveryModal">In-Store Availability</a>
-              <a     data-bs-toggle="modal" data-bs-target="#deliveryModal">Delivery and Return</a>
+              <a      href='http://localhost:3000/FAQ'>Composition and Care</a>
+              <a    href='http://localhost:3000/FAQ' >In-Store Availability</a>
+              <a   href='http://localhost:3000/FAQ' >Delivery and Return</a>
             </div>
           </div>
         </div>
@@ -603,7 +616,7 @@ setcategoriaRef?.current==null?
 }</div>
            <div class="pc__img-wrapper">
             
-             <a href={`https://kitchen-glow.com/item/${item.id}`}  >
+             <a href={`http://localhost:3000/item/${item.id}`}  >
               
                <img loading="lazy" src={item.Item_photo[0]?.photo} width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img"/>
                <img loading="lazy" src={item.Item_photo[0]?.photo} width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second"/>
@@ -614,7 +627,7 @@ setcategoriaRef?.current==null?
 
            <div class="pc__info position-relative">
              <p class="pc__category">For you</p>
-             <h6 class="pc__title"><a href={`https://kitchen-glow.com/item/${item.id}`}>{item.name}</a></h6>
+             <h6 class="pc__title"><a href={`http://localhost:3000/item/${item.id}`}>{item.name}</a></h6>
              <div class="product-card__price d-flex">
                <span class="money price">${item.price}</span>
                
@@ -651,7 +664,7 @@ setcategoriaRef?.current==null?
   <button onClick={closes} class="btn-close-lg js-close-aside btn-close-aside ms-auto"></button>
 </div>
 
-<div class=" cart-drawer-items-list">
+<div class=" cart-drawer-items-list" style={{maxHeight:'auto'}}>
 
 
  
@@ -663,7 +676,7 @@ setcategoriaRef?.current==null?
         <img loading="lazy" class="cart-drawer-item__img" src={item.photo} alt=""/>
       </a>
     </div>
-    <div class="cart-drawer-item__info flex-grow-1">
+    <div class="cart-drawer-item__info flex-grow-1" style={{maxHeight:'auto'}}>
       <h6 class="cart-drawer-item__title fw-normal"><a >{item.name}</a></h6>
       <p class="cart-drawer-item__option text-secondary">New Product</p>
       <p class="cart-drawer-item__option text-secondary">{item.description}</p>
@@ -683,7 +696,7 @@ setcategoriaRef?.current==null?
         }      </div>
     </div>
 
-    <button onClick={()=>delete1(item.id)} class="btn-close-xs position-absolute top-0 end-0 js-cart-item-remove"></button>
+    <div onClick={()=>delete1(item.id)} class="dpfd" style={{cursor:'pointer',fontSize:'17px'}}>x</div>
   </div>
 
   <hr class="cart-drawer-divider"/>
@@ -699,8 +712,8 @@ setcategoriaRef?.current==null?
     <h6 class="fs-base fw-medium">SUBTOTAL:</h6>
     <span class="cart-subtotal fw-medium">${(setsubtotRef?.current*1).toFixed(2)}</span>
   </div>
-  <a href="https://kitchen-glow.com/cart" class="btn btn-light mt-3 d-block">View Cart</a>
-  <a href="https://kitchen-glow.com/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
+  <a href="http://localhost:3000/cart" class="btn btn-light mt-3 d-block">View Cart</a>
+  <a href="http://localhost:3000/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
 </div>
 </div>
   <div class="mb-5 pb-xl-5"></div>

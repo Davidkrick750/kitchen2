@@ -11576,7 +11576,7 @@ textarea.form-control-lg {
   padding-bottom: 22.5rem; }
 
 .cart-drawer-items-list {
-  max-height: 27.675rem;
+  max-height: auto;
   overflow-y: auto;
   height: 100%; }
 

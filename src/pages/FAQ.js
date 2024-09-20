@@ -9,7 +9,7 @@ function FAQ() {
   const [skoka,setskoka,setskokaRef] = useState(null)
   const getBasketItem = async() => {
    
-    const storedToken = localStorage.getItem('token1');
+    const storedToken = localStorage.getItem('token2');
     if(storedToken==null || storedToken==undefined){
       await auth0()
       getBasketItem()
