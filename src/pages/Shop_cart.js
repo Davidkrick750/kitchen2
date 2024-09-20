@@ -121,14 +121,14 @@ setTimeout(() => {
             <em>Manage Your Items List</em>
           </span>
         </a>
-        <a  href='http://localhost:3000/checkout'  class="checkout-steps__item">
+        <a  href='https://kitchen-glow.com/checkout'  class="checkout-steps__item">
           <span class="checkout-steps__item-number">02</span>
           <span class="checkout-steps__item-title">
             <span>Shipping and Checkout</span>
             <em>Checkout Your Items List</em>
           </span>
         </a>
-        <a  href='http://localhost:3000/checkout'    class="checkout-steps__item">
+        <a  href='https://kitchen-glow.com/checkout'    class="checkout-steps__item">
           <span class="checkout-steps__item-number">03</span>
           <span class="checkout-steps__item-title">
             <span>Confirmation</span>
@@ -154,7 +154,7 @@ setTimeout(() => {
   <tr>
   <td>
     <div class="shopping-cart__product-item">
-      <a href={`http://localhost:3000/item/${item.ItemId}`} >
+      <a href={`https://kitchen-glow.com/item/${item.ItemId}`} >
         <img loading="lazy" class='img_cs' src={item.photo} width="120" height="200" alt=""/>
       </a>
     </div>
@@ -265,7 +265,7 @@ setTimeout(() => {
             </div>
             <div class="mobile_fixed-btn_wrapper">
               <div class="button-wrapper container">
-                <a href='http://localhost:3000/checkout'  class="btn btn-primary btn-checkout">PROCEED TO CHECKOUT</a>
+                <a href='https://kitchen-glow.com/checkout'  class="btn btn-primary btn-checkout">PROCEED TO CHECKOUT</a>
               </div>
             </div>
           </div>
@@ -332,8 +332,8 @@ setTimeout(() => {
     <h6 class="fs-base fw-medium">SUBTOTAL:</h6>
     <span class="cart-subtotal fw-medium">${(setsubtotRef?.current*1).toFixed(2)}</span>
   </div>
-  <a href="http://localhost:3000/cart" class="btn btn-light mt-3 d-block">View Cart</a>
-  <a href="http://localhost:3000/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
+  <a href="https://kitchen-glow.com/cart" class="btn btn-light mt-3 d-block">View Cart</a>
+  <a href="https://kitchen-glow.com/checkout" class="btn btn-primary mt-3 d-block">Checkout</a>
 </div>
 </div>
   <div class="mb-5 pb-xl-5"></div>

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const $host = axios.create({
-    baseURL:'http://localhost:5003/'
+    baseURL:'https://kitchen-glow.com/'
 })
 
 export {
